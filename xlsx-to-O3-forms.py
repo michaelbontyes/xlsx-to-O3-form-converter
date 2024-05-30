@@ -3,13 +3,29 @@ import json
 import uuid
 import re
 
+def generate_id_from_label(label):
+    return re.sub(r'\W+', '_', label).lower()
+
+def parse_skip_logic(skip_logic):
+    if pd.isna(skip_logic):
+        return None
+    match = re.match(r"Hide question if \[(.*?)\] <> '(.*?)'", skip_logic)
+    if match:
+        question, value = match.groups()
+        return {
+            "hide": {
+                "hideWhenExpression": f"{generate_id_from_label(question)} !== '{value}'"
+            }
+        }
+    return None
+
 def xls_to_json(xls_file_path, json_file_path, form_schema):
     # Conversion table for rendering options
     rendering_conversion = {
         'Coded': 'radio',
         'Text': 'text',
         'Numeric': 'number',
-        'Boolean': 'radio',
+        'Boolean': 'boolean',
         'Select': 'select',
         'MultiSelect': 'multiCheckbox',
         'Date': 'date'
@@ -17,7 +33,10 @@ def xls_to_json(xls_file_path, json_file_path, form_schema):
 
     # Read the XLS data from the specified sheet with the correct header
     df = pd.read_excel(xls_file_path, engine='openpyxl', sheet_name='F01-MHPSS_Baseline', header=1)
-    optionsets_df = pd.read_excel(xls_file_path, engine='openpyxl', sheet_name='OptionSets', header=1)
+    optionsets_df = pd.read_excel(xls_file_path, engine='openpyxl', sheet_name='OptionSets', header=1, dtype=str)
+
+    # Replace NaN with 'None' in the optionsets_df
+    optionsets_df.fillna('None', inplace=True)
 
     # Create a dictionary for OptionSets
     optionsets_dict = {}
@@ -52,14 +71,15 @@ def xls_to_json(xls_file_path, json_file_path, form_schema):
         if pd.isna(row['Question']):
             continue
         
-        page_label = row['Page']  # Use the page value from the XLSX file as the description
+        page_label = row['Page']
         section_label = row['Section']
         question_label = row['Label if different'] if pd.notna(row['Label if different']) else row['Question']
-        required = row.get('Mandatory', False) == True  # Make "Mandatory" optional
-        question_id = row['Question ID']
-        rendering = rendering_conversion.get(row['Datatype'], '')  # Use conversion table
+        required = row.get('Mandatory', False) == True
+        question_id = generate_id_from_label(question_label)
+        rendering = rendering_conversion.get(row['Datatype'], '')
         concept = row.get('Question', '')
         option_set_name = row.get('OptionSet name')
+        skip_logic = parse_skip_logic(row.get('Skip logic'))
 
         # Check if we need to add a new page
         if page_label != current_page_label:
@@ -109,6 +129,10 @@ def xls_to_json(xls_file_path, json_file_path, form_schema):
             'questionOptions': question_options,
             'validators': []
         }
+
+        # Add skip logic if defined
+        if skip_logic:
+            question.update(skip_logic)
 
         if question_id not in questions_dict:
             questions_dict[question_id] = question

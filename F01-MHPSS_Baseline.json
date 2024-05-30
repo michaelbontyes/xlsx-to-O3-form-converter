@@ -12,7 +12,7 @@
               "label": "Admission type",
               "type": "obs",
               "required": false,
-              "id": 1,
+              "id": "admission_type",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Admission type",
@@ -40,7 +40,7 @@
               "label": "Type of consultation",
               "type": "obs",
               "required": false,
-              "id": 2,
+              "id": "type_of_consultation",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Type of consultation",
@@ -70,20 +70,23 @@
               "label": "Total number of beneficiaries in family consultation",
               "type": "obs",
               "required": false,
-              "id": 3,
+              "id": "total_number_of_beneficiaries_in_family_consultation",
               "questionOptions": {
                 "rendering": "number",
                 "concept": "Total number of beneficiaries in family consultation",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "type_of_consultation !== 'Family'"
+              }
             },
             {
               "label": "Consultation done by",
               "type": "obs",
               "required": false,
-              "id": 4,
+              "id": "consultation_done_by",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Consultation done by",
@@ -105,7 +108,7 @@
               "label": "Location of intervention",
               "type": "obs",
               "required": false,
-              "id": 5,
+              "id": "location_of_intervention",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Location of intervention",
@@ -153,59 +156,71 @@
               "label": "Specify Health Facility",
               "type": "obs",
               "required": false,
-              "id": 6,
+              "id": "specify_health_facility",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Location of intervention - If Health Facility, specify",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "location_of_intervention !== 'Health facility'"
+              }
             },
             {
               "label": "Specify MSF Health Facility",
               "type": "obs",
               "required": false,
-              "id": 7,
+              "id": "specify_msf_health_facility",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Location of intervention - If MSF Health Facility, specify",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "location_of_intervention !== 'MSF health facility'"
+              }
             },
             {
               "label": "Specify Mobile Clinic",
               "type": "obs",
               "required": false,
-              "id": 8,
+              "id": "specify_mobile_clinic",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Location of intervention - If Mobile Clinic, specify",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "location_of_intervention !== 'Mobile clinic'"
+              }
             },
             {
               "label": "If other, specify",
               "type": "obs",
               "required": false,
-              "id": 9,
+              "id": "if_other_specify",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Location of intervention - If other, specify",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "location_of_intervention !== 'Other'"
+              }
             },
             {
               "label": "Type of intervention",
               "type": "obs",
               "required": false,
-              "id": 10,
+              "id": "type_of_intervention",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Type of intervention",
@@ -233,7 +248,7 @@
               "label": "Patient referred by",
               "type": "obs",
               "required": false,
-              "id": 11,
+              "id": "patient_referred_by",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Patient referred by",
@@ -329,7 +344,7 @@
               "label": "Main problem or reason for referral (Why is the patient coming to the MH department? Write in patient\u2019s words)",
               "type": "obs",
               "required": false,
-              "id": 12,
+              "id": "main_problem_or_reason_for_referral_why_is_the_patient_coming_to_the_mh_department_write_in_patient_s_words_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Main problem or reason for referral",
@@ -348,7 +363,7 @@
               "label": "1. Psychosomatic",
               "type": "obs",
               "required": false,
-              "id": 13,
+              "id": "1_psychosomatic",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 1. Psychosomatic",
@@ -386,7 +401,7 @@
               "label": "2. Depression related",
               "type": "obs",
               "required": false,
-              "id": 14,
+              "id": "2_depression_related",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 2. Depression related",
@@ -436,7 +451,7 @@
               "label": "3. Anxiety related",
               "type": "obs",
               "required": false,
-              "id": 15,
+              "id": "3_anxiety_related",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 3. Anxiety related",
@@ -470,7 +485,7 @@
               "label": "4. Trauma related",
               "type": "obs",
               "required": false,
-              "id": 16,
+              "id": "4_trauma_related",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 4. Trauma related",
@@ -508,7 +523,7 @@
               "label": "5. Psychosis related",
               "type": "obs",
               "required": false,
-              "id": 17,
+              "id": "5_psychosis_related",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 5. Psychosis related",
@@ -546,7 +561,7 @@
               "label": "6. Neurocognitive problems",
               "type": "obs",
               "required": false,
-              "id": 18,
+              "id": "6_neurocognitive_problems",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 6. Neurocognitive problems",
@@ -580,7 +595,7 @@
               "label": "7. Behavior problems",
               "type": "obs",
               "required": false,
-              "id": 19,
+              "id": "7_behavior_problems",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 7. Behavior problems",
@@ -622,7 +637,7 @@
               "label": "8. Other symptoms",
               "type": "obs",
               "required": false,
-              "id": 20,
+              "id": "8_other_symptoms",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints - 8. Other symptoms",
@@ -633,19 +648,6 @@
                     "label": "Other"
                   }
                 ]
-              },
-              "validators": []
-            },
-            {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 21,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Current symptoms or complaints - If other, specify",
-                "conceptMappings": [],
-                "answers": []
               },
               "validators": []
             }
@@ -659,7 +661,7 @@
               "label": "Clinical diagnosis (To be established only by psychologist)",
               "type": "obs",
               "required": false,
-              "id": 22,
+              "id": "clinical_diagnosis_to_be_established_only_by_psychologist_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Clinical diagnosis",
@@ -740,23 +742,233 @@
                   {
                     "concept": "No diagnosis",
                     "label": "No diagnosis"
+                  },
+                  {
+                    "concept": "Abnormal behaviour",
+                    "label": "Abnormal behaviour"
+                  },
+                  {
+                    "concept": "Acute and transient psychosis",
+                    "label": "Acute and transient psychosis"
+                  },
+                  {
+                    "concept": "Acute stress reaction",
+                    "label": "Acute stress reaction"
+                  },
+                  {
+                    "concept": "Adjustment reaction",
+                    "label": "Adjustment reaction"
+                  },
+                  {
+                    "concept": "Anxiety disorder",
+                    "label": "Anxiety disorder"
+                  },
+                  {
+                    "concept": "Asthma",
+                    "label": "Asthma"
+                  },
+                  {
+                    "concept": "Bipolar disorder",
+                    "label": "Bipolar disorder"
+                  },
+                  {
+                    "concept": "Cardiovascular disease",
+                    "label": "Cardiovascular disease"
+                  },
+                  {
+                    "concept": "Child attention deficit disorder",
+                    "label": "Child attention deficit disorder"
+                  },
+                  {
+                    "concept": "Childhood emotional disorder",
+                    "label": "Childhood emotional disorder"
+                  },
+                  {
+                    "concept": "Chronic kidney disease",
+                    "label": "Chronic kidney disease"
+                  },
+                  {
+                    "concept": "Chronic non-psychotic brain syndrome",
+                    "label": "Chronic non-psychotic brain syndrome"
+                  },
+                  {
+                    "concept": "Chronic obstructive pulmonary disease",
+                    "label": "Chronic obstructive pulmonary disease"
+                  },
+                  {
+                    "concept": "Compression device used",
+                    "label": "Compression device used"
+                  },
+                  {
+                    "concept": "Conduct disorders",
+                    "label": "Conduct disorders"
+                  },
+                  {
+                    "concept": "Delirium",
+                    "label": "Delirium"
+                  },
+                  {
+                    "concept": "Dementia",
+                    "label": "Dementia"
+                  },
+                  {
+                    "concept": "Diabetes mellitus, type 1",
+                    "label": "Diabetes mellitus, type 1"
+                  },
+                  {
+                    "concept": "Diabetes mellitus, type 2",
+                    "label": "Diabetes mellitus, type 2"
+                  },
+                  {
+                    "concept": "Dissociative and conversion disorder",
+                    "label": "Dissociative and conversion disorder"
+                  },
+                  {
+                    "concept": "Dissociative convulsions",
+                    "label": "Dissociative convulsions"
+                  },
+                  {
+                    "concept": "Epilepsy",
+                    "label": "Epilepsy"
+                  },
+                  {
+                    "concept": "Focal epilepsy",
+                    "label": "Focal epilepsy"
+                  },
+                  {
+                    "concept": "Generalised epilepsy",
+                    "label": "Generalised epilepsy"
+                  },
+                  {
+                    "concept": "Hyperkinetic disorder",
+                    "label": "Hyperkinetic disorder"
+                  },
+                  {
+                    "concept": "Hypertension",
+                    "label": "Hypertension"
+                  },
+                  {
+                    "concept": "Hyperthyroidism",
+                    "label": "Hyperthyroidism"
+                  },
+                  {
+                    "concept": "Hypothyroidism",
+                    "label": "Hypothyroidism"
+                  },
+                  {
+                    "concept": "Intellectual disability",
+                    "label": "Intellectual disability"
+                  },
+                  {
+                    "concept": "Mental or behavioural disorder due to use of alcohol",
+                    "label": "Mental or behavioural disorder due to use of alcohol"
+                  },
+                  {
+                    "concept": "Mental or behavioural disorders due to psychoactive substances",
+                    "label": "Mental or behavioural disorders due to psychoactive substances"
+                  },
+                  {
+                    "concept": "None",
+                    "label": "None"
+                  },
+                  {
+                    "concept": "Nonorganic enuresis",
+                    "label": "Nonorganic enuresis"
+                  },
+                  {
+                    "concept": "Obsessive-compulsive disorder",
+                    "label": "Obsessive-compulsive disorder"
+                  },
+                  {
+                    "concept": "Other",
+                    "label": "Other"
+                  },
+                  {
+                    "concept": "Panic disorder",
+                    "label": "Panic disorder"
+                  },
+                  {
+                    "concept": "Persistent delusional disorder",
+                    "label": "Persistent delusional disorder"
+                  },
+                  {
+                    "concept": "Pervasive developmental disorder, Active",
+                    "label": "Pervasive developmental disorder, Active"
+                  },
+                  {
+                    "concept": "Phobic disorder",
+                    "label": "Phobic disorder"
+                  },
+                  {
+                    "concept": "Post Traumatic Stress Disorder",
+                    "label": "Post Traumatic Stress Disorder"
+                  },
+                  {
+                    "concept": "Post-partum depression",
+                    "label": "Post-partum depression"
+                  },
+                  {
+                    "concept": "Post-partum psychosis",
+                    "label": "Post-partum psychosis"
+                  },
+                  {
+                    "concept": "Psychosomatic problems",
+                    "label": "Psychosomatic problems"
+                  },
+                  {
+                    "concept": "Puerperal psychosis",
+                    "label": "Puerperal psychosis"
+                  },
+                  {
+                    "concept": "Reaction to severe stress",
+                    "label": "Reaction to severe stress"
+                  },
+                  {
+                    "concept": "Recurrent major depressive episodes, mild",
+                    "label": "Recurrent major depressive episodes, mild"
+                  },
+                  {
+                    "concept": "Recurrent major depressive episodes, moderate",
+                    "label": "Recurrent major depressive episodes, moderate"
+                  },
+                  {
+                    "concept": "Schizoaffective disorder",
+                    "label": "Schizoaffective disorder"
+                  },
+                  {
+                    "concept": "Schizophrenia",
+                    "label": "Schizophrenia"
+                  },
+                  {
+                    "concept": "Separation anxiety disorder of childhood",
+                    "label": "Separation anxiety disorder of childhood"
+                  },
+                  {
+                    "concept": "Severe recurrent major depression with psychotic features",
+                    "label": "Severe recurrent major depression with psychotic features"
+                  },
+                  {
+                    "concept": "Severe recurrent major depression without psychotic features",
+                    "label": "Severe recurrent major depression without psychotic features"
+                  },
+                  {
+                    "concept": "Sibling rivalry disorder",
+                    "label": "Sibling rivalry disorder"
+                  },
+                  {
+                    "concept": "Social anxiety disorder of childhood",
+                    "label": "Social anxiety disorder of childhood"
+                  },
+                  {
+                    "concept": "Somatoform disorders",
+                    "label": "Somatoform disorders"
                   }
                 ]
               },
-              "validators": []
-            },
-            {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 24,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Clinical diagnosis - If other, specify",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "consultation_done_by !== 'Psychologist'"
+              }
             }
           ]
         },
@@ -768,7 +980,7 @@
               "label": "Current symptoms or complaints 1",
               "type": "obs",
               "required": false,
-              "id": 25,
+              "id": "current_symptoms_or_complaints_1",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints 1",
@@ -962,7 +1174,7 @@
               "label": "Current symptoms or complaints 2",
               "type": "obs",
               "required": false,
-              "id": 26,
+              "id": "current_symptoms_or_complaints_2",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints 2",
@@ -1156,7 +1368,7 @@
               "label": "Current symptoms or complaints 3",
               "type": "obs",
               "required": false,
-              "id": 27,
+              "id": "current_symptoms_or_complaints_3",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Current symptoms or complaints 3",
@@ -1345,19 +1557,6 @@
                 ]
               },
               "validators": []
-            },
-            {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 28,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Current symptoms or complaints - If other, specify",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
             }
           ]
         },
@@ -1369,7 +1568,7 @@
               "label": "Main category of symptoms",
               "type": "obs",
               "required": false,
-              "id": 29,
+              "id": "main_category_of_symptoms",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Main category of symptoms",
@@ -1415,7 +1614,7 @@
               "label": "Duration of the main symptom",
               "type": "obs",
               "required": false,
-              "id": 30,
+              "id": "duration_of_the_main_symptom",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Duration of the main symptom",
@@ -1453,7 +1652,7 @@
               "label": "Important details of the main problem: How long have they had the problem (significant events, etc.)?",
               "type": "obs",
               "required": false,
-              "id": 31,
+              "id": "important_details_of_the_main_problem_how_long_have_they_had_the_problem_significant_events_etc_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Important details of the main problem",
@@ -1466,7 +1665,7 @@
               "label": "Patient presentation: How do they look or speak / motor activity / mood / thoughts / perceptions? Is the patient oriented in time / space / person / recent events?",
               "type": "obs",
               "required": false,
-              "id": 32,
+              "id": "patient_presentation_how_do_they_look_or_speak_motor_activity_mood_thoughts_perceptions_is_the_patient_oriented_in_time_space_person_recent_events_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient presentation",
@@ -1485,7 +1684,7 @@
               "label": "Did you have problems performing daily activities, such as cooking, bathing, or chores outside the household?",
               "type": "obs",
               "required": false,
-              "id": 33,
+              "id": "did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Did you have problems performing daily activities, such as cooking, bathing, or chores outside the household?",
@@ -1519,7 +1718,7 @@
               "label": "Did you have problems getting along with family or friends?",
               "type": "obs",
               "required": false,
-              "id": 34,
+              "id": "did_you_have_problems_getting_along_with_family_or_friends_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Did you have problems getting along with family or friends?",
@@ -1553,7 +1752,7 @@
               "label": " Did you have any problems sleeping, such as sleeping too much or not enough?",
               "type": "obs",
               "required": false,
-              "id": 35,
+              "id": "_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": " Did you have any problems sleeping, such as sleeping too much or not enough?",
@@ -1587,7 +1786,7 @@
               "label": "Have you been bothered by unpleasant thoughts, worries or ideas?",
               "type": "obs",
               "required": false,
-              "id": 36,
+              "id": "have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Have you been bothered by unpleasant thoughts, worries or ideas?",
@@ -1621,7 +1820,7 @@
               "label": "Have you felt sad or nervous?",
               "type": "obs",
               "required": false,
-              "id": 37,
+              "id": "have_you_felt_sad_or_nervous_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Have you felt sad or nervous?",
@@ -1655,7 +1854,7 @@
               "label": "Have you been suffering?",
               "type": "obs",
               "required": false,
-              "id": 38,
+              "id": "have_you_been_suffering_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Have you been suffering?",
@@ -1689,7 +1888,7 @@
               "label": "MHOS score",
               "type": "obs",
               "required": false,
-              "id": 39,
+              "id": "mhos_score",
               "questionOptions": {
                 "rendering": "number",
                 "concept": "MHOS score",
@@ -1708,7 +1907,7 @@
               "label": "Little interest or pleasure in doing things?",
               "type": "obs",
               "required": false,
-              "id": 40,
+              "id": "little_interest_or_pleasure_in_doing_things_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Little interest or pleasure in doing things?",
@@ -1738,7 +1937,7 @@
               "label": "Feeling down, depressed, or hopeless?",
               "type": "obs",
               "required": false,
-              "id": 41,
+              "id": "feeling_down_depressed_or_hopeless_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Feeling down, depressed, or hopeless?",
@@ -1768,7 +1967,7 @@
               "label": "Trouble falling or staying asleep, or sleeping too much?",
               "type": "obs",
               "required": false,
-              "id": 42,
+              "id": "trouble_falling_or_staying_asleep_or_sleeping_too_much_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Trouble falling or staying asleep, or sleeping too much?",
@@ -1798,7 +1997,7 @@
               "label": "Feeling tired or having little energy?",
               "type": "obs",
               "required": false,
-              "id": 43,
+              "id": "feeling_tired_or_having_little_energy_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Feeling tired or having little energy?",
@@ -1828,7 +2027,7 @@
               "label": "Poor appetite or overeating?",
               "type": "obs",
               "required": false,
-              "id": 44,
+              "id": "poor_appetite_or_overeating_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Poor appetite or overeating?",
@@ -1858,7 +2057,7 @@
               "label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?",
               "type": "obs",
               "required": false,
-              "id": 45,
+              "id": "feeling_bad_about_yourself_or_that_you_are_a_failure_or_have_let_yourself_or_your_family_down_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down?",
@@ -1888,7 +2087,7 @@
               "label": "Trouble concentrating on things, such as reading the newspaper or watching television?",
               "type": "obs",
               "required": false,
-              "id": 46,
+              "id": "trouble_concentrating_on_things_such_as_reading_the_newspaper_or_watching_television_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Trouble concentrating on things, such as reading the newspaper or watching television?",
@@ -1918,7 +2117,7 @@
               "label": "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?",
               "type": "obs",
               "required": false,
-              "id": 47,
+              "id": "moving_or_speaking_so_slowly_that_other_people_could_have_noticed_or_the_opposite_being_so_fidgety_or_restless_that_you_have_been_moving_around_a_lot_more_than_usual_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?",
@@ -1948,7 +2147,7 @@
               "label": "Thoughts that you would be better off dead, or of hurting yourself in some way?",
               "type": "obs",
               "required": false,
-              "id": 48,
+              "id": "thoughts_that_you_would_be_better_off_dead_or_of_hurting_yourself_in_some_way_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Thoughts that you would be better off dead, or of hurting yourself in some way?",
@@ -1978,7 +2177,7 @@
               "label": "PHQ-9 score",
               "type": "obs",
               "required": false,
-              "id": 49,
+              "id": "phq_9_score",
               "questionOptions": {
                 "rendering": "number",
                 "concept": "PHQ-9 score",
@@ -1997,7 +2196,7 @@
               "label": "CGI-S score",
               "type": "obs",
               "required": false,
-              "id": 50,
+              "id": "cgi_s_score",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "CGI-S score",
@@ -2049,9 +2248,9 @@
               "label": "Positive Functionality: Is the patient capable of being independent, caring for themselves (bathing/eating), going to work/school, etc.?",
               "type": "obs",
               "required": false,
-              "id": 51,
+              "id": "positive_functionality_is_the_patient_capable_of_being_independent_caring_for_themselves_bathing_eating_going_to_work_school_etc_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Positive Functionality",
                 "conceptMappings": [],
                 "answers": [
@@ -2071,9 +2270,9 @@
               "label": "Internal Resources: Does the patient believe that they have the abilities needed to overcome the current problem / do they have hope for their future?",
               "type": "obs",
               "required": false,
-              "id": 52,
+              "id": "internal_resources_does_the_patient_believe_that_they_have_the_abilities_needed_to_overcome_the_current_problem_do_they_have_hope_for_their_future_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Internal Resources",
                 "conceptMappings": [],
                 "answers": [
@@ -2093,9 +2292,9 @@
               "label": "External Resources: Does the patient believe that they have someone who they can rely on for help in their lives?",
               "type": "obs",
               "required": false,
-              "id": 53,
+              "id": "external_resources_does_the_patient_believe_that_they_have_someone_who_they_can_rely_on_for_help_in_their_lives_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "External Resources",
                 "conceptMappings": [],
                 "answers": [
@@ -2115,9 +2314,9 @@
               "label": "Spiritual / Moral Resources: Are the patient\u2019s beliefs a source of strength for them when dealing with problems?",
               "type": "obs",
               "required": false,
-              "id": 54,
+              "id": "spiritual_moral_resources_are_the_patient_s_beliefs_a_source_of_strength_for_them_when_dealing_with_problems_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Spiritual / Moral Resources",
                 "conceptMappings": [],
                 "answers": [
@@ -2143,9 +2342,9 @@
               "label": "1. Has the patient had thoughts of death or suicide?",
               "type": "obs",
               "required": false,
-              "id": 55,
+              "id": "1_has_the_patient_had_thoughts_of_death_or_suicide_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Has the patient had thoughts of death or suicide?",
                 "conceptMappings": [],
                 "answers": [
@@ -2165,7 +2364,7 @@
               "label": "Frequency",
               "type": "obs",
               "required": false,
-              "id": 56,
+              "id": "frequency",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Thoughts of death or suicide - Frequency",
@@ -2178,9 +2377,9 @@
               "label": "2. Has the patient hurt themselves / caused self-harm?",
               "type": "obs",
               "required": false,
-              "id": 57,
+              "id": "2_has_the_patient_hurt_themselves_caused_self_harm_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Has the patient hurt themselves / caused self-harm?",
                 "conceptMappings": [],
                 "answers": [
@@ -2200,7 +2399,7 @@
               "label": "Type of behavior and frequency",
               "type": "obs",
               "required": false,
-              "id": 58,
+              "id": "type_of_behavior_and_frequency",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient hurt themselves / caused self-harm - Type of behavior and frequency",
@@ -2213,9 +2412,9 @@
               "label": "3. Has the patient attempted suicide or tried to kill themselves?",
               "type": "obs",
               "required": false,
-              "id": 59,
+              "id": "3_has_the_patient_attempted_suicide_or_tried_to_kill_themselves_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Has the patient attempted suicide or tried to kill themselves?",
                 "conceptMappings": [],
                 "answers": [
@@ -2235,7 +2434,7 @@
               "label": "Number of attempts and method",
               "type": "obs",
               "required": false,
-              "id": 60,
+              "id": "number_of_attempts_and_method",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient attempted suicide or tried to kill themselves - Number of attempts and method",
@@ -2248,9 +2447,9 @@
               "label": "4. Is the patient currently at risk of hurting himself/herself or attempting suicide?",
               "type": "obs",
               "required": false,
-              "id": 61,
+              "id": "4_is_the_patient_currently_at_risk_of_hurting_himself_herself_or_attempting_suicide_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Is the patient currently at risk of hurting himself/herself or attempting suicide?",
                 "conceptMappings": [],
                 "answers": [
@@ -2270,7 +2469,7 @@
               "label": "Action taken to reduce risk ",
               "type": "obs",
               "required": false,
-              "id": 62,
+              "id": "action_taken_to_reduce_risk_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient currently at risk of hurting himself/herself or attempting suicide - Action taken to reduce risk ",
@@ -2283,9 +2482,9 @@
               "label": "5. Is the patient currently at risk of hurting others?",
               "type": "obs",
               "required": false,
-              "id": 63,
+              "id": "5_is_the_patient_currently_at_risk_of_hurting_others_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Is the patient currently at risk of hurting others?",
                 "conceptMappings": [],
                 "answers": [
@@ -2302,25 +2501,12 @@
               "validators": []
             },
             {
-              "label": "Action taken to reduce risk ",
-              "type": "obs",
-              "required": false,
-              "id": 64,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Patient currently at risk of hurting others - Action taken to reduce risk ",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
               "label": "6. Does the patient regularly use alcohol / substances to become intoxicated?",
               "type": "obs",
               "required": false,
-              "id": 65,
+              "id": "6_does_the_patient_regularly_use_alcohol_substances_to_become_intoxicated_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Does the patient regularly use alcohol / substances to become intoxicated?",
                 "conceptMappings": [],
                 "answers": [
@@ -2340,7 +2526,7 @@
               "label": "Type of substance and frequency ",
               "type": "obs",
               "required": false,
-              "id": 66,
+              "id": "type_of_substance_and_frequency_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient regularly uses alcohol / substances to become intoxicated - Type of substance and frequency ",
@@ -2353,9 +2539,9 @@
               "label": "7. Is the patient currently on psychotropic / psychiatric medication?",
               "type": "obs",
               "required": false,
-              "id": 67,
+              "id": "7_is_the_patient_currently_on_psychotropic_psychiatric_medication_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Is the patient currently on psychotropic / psychiatric medication?",
                 "conceptMappings": [],
                 "answers": [
@@ -2375,7 +2561,7 @@
               "label": "Prescribed by",
               "type": "obs",
               "required": false,
-              "id": 68,
+              "id": "prescribed_by",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Patient currently on psychotropic / psychiatric medication - Prescribed by",
@@ -2397,9 +2583,9 @@
               "label": "8. Has the patient experienced an act of aggression or violence?",
               "type": "obs",
               "required": false,
-              "id": 69,
+              "id": "8_has_the_patient_experienced_an_act_of_aggression_or_violence_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Has the patient experienced an act of aggression or violence?",
                 "conceptMappings": [],
                 "answers": [
@@ -2419,7 +2605,7 @@
               "label": "What type(s) of violence?",
               "type": "obs",
               "required": false,
-              "id": 70,
+              "id": "what_type_s_of_violence_",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Patient experienced an act of aggression or violence - What type(s) of violence?",
@@ -2447,26 +2633,16 @@
                   }
                 ]
               },
-              "validators": []
-            },
-            {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 72,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Type(s) of violence - If other, specify",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "has_the_patient_experienced_an_act_of_aggression_or_violence !== 'Yes'"
+              }
             },
             {
               "label": "Time between violence event and consultation",
               "type": "obs",
               "required": false,
-              "id": 73,
+              "id": "time_between_violence_event_and_consultation",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Patient experienced an act of aggression or violence - Time between violence event and consultation",
@@ -2490,15 +2666,18 @@
                   }
                 ]
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "has_the_patient_experienced_an_act_of_aggression_or_violence !== 'Yes'"
+              }
             },
             {
               "label": "9. If yes, would the patient like a referral to the medical department for treatment (or midwife/maternity for sexual violence)?",
               "type": "obs",
               "required": false,
-              "id": 74,
+              "id": "9_if_yes_would_the_patient_like_a_referral_to_the_medical_department_for_treatment_or_midwife_maternity_for_sexual_violence_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Would the patient like a referral to the medical department for treatment?",
                 "conceptMappings": [],
                 "answers": [
@@ -2512,20 +2691,26 @@
                   }
                 ]
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "if_yes_what_type_s_of_violence_ !== 'Sexual'"
+              }
             },
             {
               "label": "Action taken",
               "type": "obs",
               "required": false,
-              "id": 75,
+              "id": "action_taken",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Patient would like a referral to the medical department for treatment - Action taken",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "if_yes_what_type_s_of_violence_ !== 'Sexual'"
+              }
             }
           ]
         },
@@ -2537,7 +2722,7 @@
               "label": "1. Medical conditions",
               "type": "obs",
               "required": false,
-              "id": 76,
+              "id": "1_medical_conditions",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Past / Precipitating Events - Medical conditions",
@@ -2575,7 +2760,7 @@
               "label": "2. Violence",
               "type": "obs",
               "required": false,
-              "id": 77,
+              "id": "2_violence",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Past / Precipitating Events - Violence",
@@ -2665,7 +2850,7 @@
               "label": "3. Separation or loss",
               "type": "obs",
               "required": false,
-              "id": 78,
+              "id": "3_separation_or_loss",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Past / Precipitating Events - Separation or loss",
@@ -2715,7 +2900,7 @@
               "label": "4. Disaster",
               "type": "obs",
               "required": false,
-              "id": 79,
+              "id": "4_disaster",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Past / Precipitating Events - Disaster",
@@ -2737,7 +2922,7 @@
               "label": "5. Other",
               "type": "obs",
               "required": false,
-              "id": 80,
+              "id": "5_other",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Past / Precipitating Events - Other",
@@ -2758,19 +2943,6 @@
                 ]
               },
               "validators": []
-            },
-            {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 81,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Past / Precipitating Events - If other, specify",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
             }
           ]
         },
@@ -2782,7 +2954,7 @@
               "label": "Main past or precipitating events - 1",
               "type": "obs",
               "required": false,
-              "id": 82,
+              "id": "main_past_or_precipitating_events_1",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Main past or precipitating events - 1",
@@ -2952,7 +3124,7 @@
               "label": "Main past or precipitating events - 2",
               "type": "obs",
               "required": false,
-              "id": 83,
+              "id": "main_past_or_precipitating_events_2",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Main past or precipitating events - 2",
@@ -3122,7 +3294,7 @@
               "label": "Main past or precipitating events - 3",
               "type": "obs",
               "required": false,
-              "id": 84,
+              "id": "main_past_or_precipitating_events_3",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Main past or precipitating events - 3",
@@ -3292,7 +3464,7 @@
               "label": "Main category of precipitating event",
               "type": "obs",
               "required": false,
-              "id": 85,
+              "id": "main_category_of_precipitating_event",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Main category of precipitating event",
@@ -3326,7 +3498,7 @@
               "label": "Relevant details of the past / precipitating events",
               "type": "obs",
               "required": false,
-              "id": 86,
+              "id": "relevant_details_of_the_past_precipitating_events",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Relevant details of the past / precipitating events",
@@ -3345,7 +3517,7 @@
               "label": "Overall Goals for therapy (what are you trying to accomplish over several sessions with the patient? Try to be specific & define these with the patient)",
               "type": "obs",
               "required": false,
-              "id": 87,
+              "id": "overall_goals_for_therapy_what_are_you_trying_to_accomplish_over_several_sessions_with_the_patient_try_to_be_specific_define_these_with_the_patient_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Overall goals for therapy",
@@ -3358,7 +3530,7 @@
               "label": "Today\u2019s Session (what did you do today in session?)",
               "type": "obs",
               "required": false,
-              "id": 88,
+              "id": "today_s_session_what_did_you_do_today_in_session_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Today\u2019s session",
@@ -3371,7 +3543,7 @@
               "label": "Homework (what will the patient do before next session?)",
               "type": "obs",
               "required": false,
-              "id": 89,
+              "id": "homework_what_will_the_patient_do_before_next_session_",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Homework",
@@ -3390,9 +3562,9 @@
               "label": "Follow up session required? (If no, fill the Exit form)",
               "type": "obs",
               "required": false,
-              "id": 90,
+              "id": "follow_up_session_required_if_no_fill_the_exit_form_",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Follow up session required?",
                 "conceptMappings": [],
                 "answers": [
@@ -3412,22 +3584,25 @@
               "label": "Next session date",
               "type": "obs",
               "required": false,
-              "id": 91,
+              "id": "next_session_date",
               "questionOptions": {
                 "rendering": "date",
                 "concept": "Next session date",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "follow_up_session_required !== 'Yes'"
+              }
             },
             {
               "label": "Referral done",
               "type": "obs",
               "required": false,
-              "id": 92,
+              "id": "referral_done",
               "questionOptions": {
-                "rendering": "radio",
+                "rendering": "boolean",
                 "concept": "Referral done",
                 "conceptMappings": [],
                 "answers": [
@@ -3447,7 +3622,7 @@
               "label": "Type of referral",
               "type": "obs",
               "required": false,
-              "id": 93,
+              "id": "type_of_referral",
               "questionOptions": {
                 "rendering": "radio",
                 "concept": "Type of referral",
@@ -3494,23 +3669,10 @@
               "validators": []
             },
             {
-              "label": "If other, specify",
-              "type": "obs",
-              "required": false,
-              "id": 94,
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "Type of referral - If other, specify",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
               "label": "Reason for referral",
               "type": "obs",
               "required": false,
-              "id": 95,
+              "id": "reason_for_referral",
               "questionOptions": {
                 "rendering": "text",
                 "concept": "Reason for referral",
@@ -3527,7 +3689,7 @@
   "processor": "EncounterFormProcessor",
   "encounterType": "dd528487-82a5-4082-9c72-ed246bd49591",
   "referencedForms": [],
-  "uuid": "8b4eb7b1-cf6a-4779-910a-c52f4db4604c",
+  "uuid": "126ae5c0-b343-4ac2-916d-c80aa807a720",
   "version": "1",
   "description": "F01-MHPSS_Baseline"
 }
