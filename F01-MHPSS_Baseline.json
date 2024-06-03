@@ -1691,23 +1691,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1725,23 +1725,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1759,23 +1759,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1793,23 +1793,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1827,23 +1827,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1861,23 +1861,23 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "Not at all",
+                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not at all"
                   },
                   {
-                    "concept": "A little",
+                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0",
                     "label": "A little"
                   },
                   {
-                    "concept": "Some",
+                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Some"
                   },
                   {
-                    "concept": "Fair amount",
+                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51",
                     "label": "Fair amount"
                   },
                   {
-                    "concept": "A lot",
+                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8",
                     "label": "A lot"
                   }
                 ]
@@ -1886,14 +1886,14 @@
             },
             {
               "label": "MHOS score",
-              "type": "obs",
               "required": false,
               "id": "mhos_score",
               "questionOptions": {
-                "rendering": "number",
+                "rendering": "text",
                 "concept": "MHOS score",
-                "conceptMappings": [],
-                "answers": []
+                "calculate": {
+                  "calculateExpression": "(String(did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(did_you_have_problems_performing_daily_activities_such_as_cooking_bathing_or_chores_outside_the_household_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0) + (String(did_you_have_problems_getting_along_with_family_or_friends_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(did_you_have_problems_getting_along_with_family_or_friends_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(did_you_have_problems_getting_along_with_family_or_friends_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(did_you_have_problems_getting_along_with_family_or_friends_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(did_you_have_problems_getting_along_with_family_or_friends_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0) + (String(_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(_did_you_have_any_problems_sleeping_such_as_sleeping_too_much_or_not_enough_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0) + (String(have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(have_you_been_bothered_by_unpleasant_thoughts_worries_or_ideas_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0) + (String(have_you_felt_sad_or_nervous_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(have_you_felt_sad_or_nervous_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(have_you_felt_sad_or_nervous_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(have_you_felt_sad_or_nervous_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(have_you_felt_sad_or_nervous_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0) + (String(have_you_been_suffering_) === '160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(have_you_been_suffering_) === 'f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0' ? 2 : String(have_you_been_suffering_) === '164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : String(have_you_been_suffering_) === 'de7fa192-bf2e-4991-a81f-582c4b50ae51' ? 4 : String(have_you_been_suffering_) === '0f074510-1ff6-4924-bfef-effdcffd44f8' ? 5 : 0)"
+                }
               },
               "validators": []
             }
@@ -2152,7 +2152,6 @@
               "questionOptions": {
                 "concept": "Anxiety score rating",
                 "rendering": "text",
-                "label": "test",
                 "calculate": {
                   "calculateExpression": "(String(noInterest) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(noInterest) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(noInterest) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(depressed) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(depressed) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 :  String(depressed)==='163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(sleep) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(sleep) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(sleep) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(feelingTired) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(feelingTired) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(feelingTired) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) +(String(poorAppetite) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(poorAppetite) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(poorAppetite) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(troubled) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(troubled) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(troubled) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(feelingBad) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(feelingBad) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(feelingBad) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(speakingSlowly) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(speakingSlowly) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(speakingSlowly) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (String(betterDead) === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : String(betterDead) === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : String(betterDead) === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)"
                 }
