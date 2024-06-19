@@ -10,38 +10,61 @@ option_sets = pd.read_excel(metadata_file, sheet_name='OptionSets', header=1)  #
 sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up']
 
 # Print the columns in the OptionSets sheet to verify
-print(f"Columns in OptionSets sheet: {option_sets.columns.tolist()}")
+#print(f"Columns in OptionSets sheet: {option_sets.columns.tolist()}")
 
 # Function to fetch options for a given option set
 def get_options(option_set_name):
     return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
 
+def camel_case(text):
+    words = text.split()
+    camel_case = words[0].lower()
+    for word in words[1:]:
+        camel_case += word.capitalize()
+    return camel_case
+
 # Function to clean up text for labels and IDs
-def clean_text(text, is_concept=False):
+def clean_text(text, type=''):
     if pd.isnull(text):
         return ''
     text = str(text)
-    text = re.sub(r'^\d+(\.\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
-    if is_concept:
+    if type == 'question_label':
+        text = re.sub(r'^\d+([.,]\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+        return text
+    if type == 'id':
+        text = camel_case(text)
         text = re.sub(r'\s*-\s*', '_', text)  # Replace hyphen surrounded by spaces with underscore
-        text = re.sub(r'[\s/]', '_', text)  # Replace spaces and slashes with underscores
         text = re.sub(r'[^a-zA-Z0-9_]', '', text)  # Remove any other non-alphanumeric characters
         text = re.sub(r'^_+|_+$', '', text)  # Remove leading and trailing underscores
         text = re.sub(r'_+', '_', text)  # Replace multiple underscores with a single underscore
-        text = camel_case(text)  # Convert to camel-case
+        return text
+    if type == 'question_answer_label':
+        text = re.sub(r'^\d+([.,]\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
     else:
         text = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/]', '', text)  # Remove any other non-alphanumeric characters except spaces, (), -, _, and /
         text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
 
-def camel_case(text):
-    parts = text.split('_')
-    return parts[0].lower() + ''.join(word.capitalize() for word in parts[1:])
-
 # Function to generate an external ID
-def generate_external_id(text):
-    return clean_text(text, is_concept=True) if text else str(uuid4()).replace("-", "_").replace("/", "_")
+def generate_external_id():
+    return str(uuid4())
+
+# Function to modify skip logic expressions
+def build_skip_logic_expression(expression: str) -> str:
+    # Regex pattern to match the required parts
+    pattern = r"\[([^\]]+)\]\s*(<>|!==|==)\s*'([^']*)'"
+    match = re.search(pattern, expression)
+    
+    if match:
+        question_id, operator, conditional_answer = match.groups()
+        conditional_answer = clean_text(conditional_answer, type='question_answer_label')
+        question_id_camel = camel_case(question_id)
+        return f"{question_id_camel} {operator} '{conditional_answer}'"
+    else:
+        return "Invalid expression format"
 
 # Function to safely parse JSON
 def safe_json_loads(s):
@@ -55,27 +78,28 @@ def generate_question(row, columns, concept_ids):
     if row.isnull().all() or pd.isnull(row['Question']):
         return None  # Skip empty rows or rows with empty 'Question'
     
-    original_label = row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question']
-    cleaned_label = clean_text(original_label)
-    external_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id(original_label)
-    concept = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id(original_label)
+    cleaned_question_label = clean_text(row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question'], type='question_label')
+    question_id = clean_text(cleaned_question_label, type='id')
+    concept_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id()
     
-    concept_ids.add(concept)  # Add the concept ID to the set
+    concept_ids.add(concept_id)  # Add the concept ID to the set
     
     rendering = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
-    if rendering == 'coded':
+    validation_format = row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else ''
+
+    if rendering == 'coded' and validation_format == 'Multiple choice':
         rendering = 'radio'
     elif rendering == 'boolean':
-        rendering = 'checkbox'
+        rendering = 'radio'
 
     question = {
-        "label": cleaned_label,
-        "type": "obs",  # fixed type as per example structure
+        "label": cleaned_question_label,
+        "type": "obs",  
         "required": str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and pd.notnull(row['Mandatory']) else False,
-        "id": external_id,
+        "id": question_id,
         "questionOptions": {
             "rendering": rendering,
-            "concept": concept
+            "concept": concept_id
         },
         "validators": safe_json_loads(row['Validation (format)']) if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else []
     }
@@ -90,14 +114,14 @@ def generate_question(row, columns, concept_ids):
         question['questionOptions']['calculate'] = {"calculateExpression": row['Calculation']}
     
     if 'Skip logic' in columns and pd.notnull(row['Skip logic']):
-        question['hide'] = {"hideWhenExpression": row['Skip logic']}
+        question['hide'] = {"hideWhenExpression": build_skip_logic_expression(row['Skip logic'])}
     
     if 'OptionSet name' in columns and pd.notnull(row['OptionSet name']):
         options = get_options(row['OptionSet name'])
         question['questionOptions']['answers'] = [
             {
-                "label": clean_text(opt['Label if different'] if 'Label if different' in opt and pd.notnull(opt['Label if different']) else opt['Answers']),
-                "concept": clean_text(opt['Answers'], is_concept=True) if pd.isnull(opt['External ID']) else opt['External ID']
+                "label": clean_text(opt['Label if different'] if 'Label if different' in opt and pd.notnull(opt['Label if different']) else opt['Answers'], type='question_answer_label'),
+                "concept": opt['External ID'] if 'External ID' in columns and pd.notnull(opt['External ID']) else generate_external_id()
             } for opt in options
         ]
 
@@ -111,7 +135,7 @@ def generate_form(sheet_name):
     }
     
     df = pd.read_excel(metadata_file, sheet_name=sheet_name, header=1)  # Adjust header to start from row 2
-    print(f"Columns in {sheet_name} sheet: {df.columns.tolist()}")  # Display the columns in the sheet
+    # print(f"Columns in {sheet_name} sheet: {df.columns.tolist()}")  # Display the columns in the sheet
     columns = df.columns.tolist()
     
     concept_ids = set()  # Initialize a set to keep track of concept IDs
