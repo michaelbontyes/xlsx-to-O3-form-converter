@@ -1,153 +1,207 @@
 import pandas as pd
 import json
-import uuid
+import os
+from uuid import uuid4
 import re
 
-def generate_id_from_label(label):
-    return re.sub(r'\W+', '_', label).lower()
+# Load the metadata
+metadata_file = 'metadata.xlsx'
+option_sets = pd.read_excel(metadata_file, sheet_name='OptionSets', header=1)  # Adjust header to start from row 2
+sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up']
 
-def parse_skip_logic(skip_logic):
-    if pd.isna(skip_logic):
+# Print the columns in the OptionSets sheet to verify
+print(f"Columns in OptionSets sheet: {option_sets.columns.tolist()}")
+
+# Function to fetch options for a given option set
+def get_options(option_set_name):
+    return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
+
+# Function to clean up text for labels and IDs
+def clean_text(text, is_concept=False):
+    if pd.isnull(text):
+        return ''
+    text = str(text)
+    text = re.sub(r'^\d+(\.\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
+    if is_concept:
+        text = re.sub(r'\s*-\s*', '_', text)  # Replace hyphen surrounded by spaces with underscore
+        text = re.sub(r'[\s/]', '_', text)  # Replace spaces and slashes with underscores
+        text = re.sub(r'[^a-zA-Z0-9_]', '', text)  # Remove any other non-alphanumeric characters
+        text = re.sub(r'^_+|_+$', '', text)  # Remove leading and trailing underscores
+        text = re.sub(r'_+', '_', text)  # Replace multiple underscores with a single underscore
+        text = camel_case(text)  # Convert to camel-case
+        return text
+    else:
+        text = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/]', '', text)  # Remove any other non-alphanumeric characters except spaces, (), -, _, and /
+        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+        return text
+
+def camel_case(text):
+    parts = text.split('_')
+    return parts[0].lower() + ''.join(word.capitalize() for word in parts[1:])
+
+# Function to generate an external ID
+def generate_external_id(text):
+    return clean_text(text, is_concept=True) if text else str(uuid4()).replace("-", "_").replace("/", "_")
+
+# Function to safely parse JSON
+def safe_json_loads(s):
+    try:
+        return json.loads(s)
+    except (ValueError, TypeError):
         return None
-    match = re.match(r"Hide question if \[(.*?)\] <> '(.*?)'", skip_logic)
-    if match:
-        question, value = match.groups()
-        return {
-            "hide": {
-                "hideWhenExpression": f"{generate_id_from_label(question)} !== '{value}'"
-            }
-        }
-    return None
 
-def xls_to_json(xls_file_path, json_file_path, form_schema):
-    # Conversion table for rendering options
-    rendering_conversion = {
-        'Coded': 'radio',
-        'Text': 'text',
-        'Numeric': 'number',
-        'Boolean': 'boolean',
-        'Select': 'select',
-        'MultiSelect': 'multiCheckbox',
-        'Date': 'date'
+# Function to generate question JSON
+def generate_question(row, columns, concept_ids):
+    if row.isnull().all() or pd.isnull(row['Question']):
+        return None  # Skip empty rows or rows with empty 'Question'
+    
+    original_label = row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question']
+    cleaned_label = clean_text(original_label)
+    external_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id(original_label)
+    concept = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id(original_label)
+    
+    concept_ids.add(concept)  # Add the concept ID to the set
+    
+    rendering = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
+    if rendering == 'coded':
+        rendering = 'radio'
+    elif rendering == 'boolean':
+        rendering = 'checkbox'
+
+    question = {
+        "label": cleaned_label,
+        "type": "obs",  # fixed type as per example structure
+        "required": str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and pd.notnull(row['Mandatory']) else False,
+        "id": external_id,
+        "questionOptions": {
+            "rendering": rendering,
+            "concept": concept
+        },
+        "validators": safe_json_loads(row['Validation (format)']) if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else []
     }
-
-    # Read the XLS data from the specified sheet with the correct header
-    df = pd.read_excel(xls_file_path, engine='openpyxl', sheet_name='F01-MHPSS_Baseline', header=1)
-    optionsets_df = pd.read_excel(xls_file_path, engine='openpyxl', sheet_name='OptionSets', header=1, dtype=str)
-
-    # Replace NaN with 'None' in the optionsets_df
-    optionsets_df.fillna('None', inplace=True)
-
-    # Create a dictionary for OptionSets
-    optionsets_dict = {}
-    for _, row in optionsets_df.iterrows():
-        option_set_name = row['OptionSet name']
-        option = row['Answers']
-        if isinstance(option, str):
-            option = re.sub(r'^\d+(\.\d+)?\s*|\.\s*', '', option)  # Remove leading numerotations and ". "
-        if option_set_name not in optionsets_dict:
-            optionsets_dict[option_set_name] = []
-        optionsets_dict[option_set_name].append(option)
-
-    # Transform XLS data into JSON structure
-    form_name = 'F01-MHPSS_Baseline'
-    json_data = {
-        'name': form_name,
-        'pages': [],
-        'processor': form_schema['processor'],
-        'encounterType': form_schema['encounterType'],
-        'referencedForms': form_schema['referencedForms'],
-        'uuid': str(uuid.uuid4()),  # Generate a new UUID
-        'version': form_schema['version'],
-        'description': form_name
-    }
-    current_page_label = None
-    current_section_label = None
-    questions_dict = {}  # To keep track of questions and nest answers
-
-    # Process each row in the DataFrame
-    for index, row in df.iterrows():
-        # Skip empty or null questions
-        if pd.isna(row['Question']):
-            continue
+    
+    if 'Default value' in columns and pd.notnull(row['Default value']):
+        question['default'] = row['Default value']
+    
+    if 'Question' in columns and pd.notnull(row['Question']):
+        question['questionInfo'] = row['Question']
         
-        page_label = row['Page']
-        section_label = row['Section']
-        question_label = row['Label if different'] if pd.notna(row['Label if different']) else row['Question']
-        required = row.get('Mandatory', False) == True
-        question_id = generate_id_from_label(question_label)
-        rendering = rendering_conversion.get(row['Datatype'], '')
-        concept = row.get('Question', '')
-        option_set_name = row.get('OptionSet name')
-        skip_logic = parse_skip_logic(row.get('Skip logic'))
+    if 'Calculation' in columns and pd.notnull(row['Calculation']):
+        question['questionOptions']['calculate'] = {"calculateExpression": row['Calculation']}
+    
+    if 'Skip logic' in columns and pd.notnull(row['Skip logic']):
+        question['hide'] = {"hideWhenExpression": row['Skip logic']}
+    
+    if 'OptionSet name' in columns and pd.notnull(row['OptionSet name']):
+        options = get_options(row['OptionSet name'])
+        question['questionOptions']['answers'] = [
+            {
+                "label": clean_text(opt['Label if different'] if 'Label if different' in opt and pd.notnull(opt['Label if different']) else opt['Answers']),
+                "concept": clean_text(opt['Answers'], is_concept=True) if pd.isnull(opt['External ID']) else opt['External ID']
+            } for opt in options
+        ]
 
-        # Check if we need to add a new page
-        if page_label != current_page_label:
-            current_page_label = page_label
-            current_section_label = None
-            json_data['pages'].append({
-                'label': page_label,
-                'sections': []
-            })
+    return question
 
-        # Check if we need to add a new section
-        if section_label != current_section_label:
-            current_section_label = section_label
-            json_data['pages'][-1]['sections'].append({
-                'label': section_label,
-                'isExpanded': False,
-                'questions': []
-            })
+# Function to generate form JSON
+def generate_form(sheet_name):
+    form = {
+        "name": sheet_name,
+        "pages": []
+    }
+    
+    df = pd.read_excel(metadata_file, sheet_name=sheet_name, header=1)  # Adjust header to start from row 2
+    print(f"Columns in {sheet_name} sheet: {df.columns.tolist()}")  # Display the columns in the sheet
+    columns = df.columns.tolist()
+    
+    concept_ids = set()  # Initialize a set to keep track of concept IDs
+    
+    sections = df['Section'].unique()
+    for section in sections:
+        section_df = df[df['Section'] == section]
+        section_label = section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0]) else ''
+        questions = [generate_question(row, columns, concept_ids) for _, row in section_df.iterrows() if not row.isnull().all() and pd.notnull(row['Question'])]
+        questions = [q for q in questions if q is not None]
+        
+        form["pages"].append({
+            "label": f"Page {len(form['pages']) + 1}",
+            "sections": [{
+                "label": section_label,
+                "isExpanded": "true",
+                "questions": questions
+            }]
+        })
+    
+    return form, concept_ids
 
-        # Set the rendering and answers accordingly
-        question_options = {
-            'rendering': rendering,
-            'concept': concept,
-            'conceptMappings': [],
-            'answers': []
-        }
+import re
 
-        # Add answers from OptionSets if the question type is radio, select, or multiSelect and an OptionSet name is defined
-        if rendering in ['radio', 'select', 'multiCheckbox'] and option_set_name in optionsets_dict:
-            for option in optionsets_dict[option_set_name]:
-                question_options['answers'].append({
-                    'concept': option,
-                    'label': option
-                })
-        elif rendering == 'boolean':
-            question_options['answers'] = [
-                {'concept': 'Yes', 'label': 'Yes'},
-                {'concept': 'No', 'label': 'No'}
-            ]
+# Function to check for missing concept IDs in calculations and skip logic expressions
+def check_missing_concepts(forms, concept_ids):
+    for form in forms:
+        form_name = form["name"]
+        missing_concepts = {}
+        missing_ids = {}
 
-        # Create or update the question
-        question = {
-            'label': question_label,
-            'type': 'obs',
-            'required': required,
-            'id': question_id,
-            'questionOptions': question_options,
-            'validators': []
-        }
+        form_ids = {question["id"] for page in form["pages"] for section in page["sections"] for question in section["questions"]}
 
-        # Add skip logic if defined
-        if skip_logic:
-            question.update(skip_logic)
+        for page in form["pages"]:
+            for section in page["sections"]:
+                for question in section["questions"]:
+                    if 'questionOptions' in question:
+                        if 'calculate' in question['questionOptions']:
+                            calculation_concepts = re.findall(r"'([^']+)'", question['questionOptions']['calculate']['calculateExpression'])
+                            for calc_concept in calculation_concepts:
+                                if calc_concept not in concept_ids:
+                                    missing_concepts[calc_concept] = question['label']
+                        if 'hide' in question:
+                            skip_logic_concepts = re.findall(r"'([^']+)'", question['hide']['hideWhenExpression'])
+                            for skip_concept in skip_logic_concepts:
+                                if skip_concept not in concept_ids:
+                                    missing_concepts[skip_concept] = question['label']
+                            skip_logic_ids = re.findall(r"\[([^\]]+)\]", question['hide']['hideWhenExpression'])
+                            for skip_id in skip_logic_ids:
+                                if skip_id not in form_ids:
+                                    missing_ids[skip_id] = question['label']
 
-        if question_id not in questions_dict:
-            questions_dict[question_id] = question
-            json_data['pages'][-1]['sections'][-1]['questions'].append(question)
+        print(f"Form: {form_name}")
+        if missing_concepts:
+            print("  Missing concept IDs:")
+            for concept, label in missing_concepts.items():
+                print(f"    Concept ID '{concept}' not found, used in label '{label}'")
+            print(f"  Total missing concept IDs: {len(missing_concepts)}")
+        else:
+            print("  No missing concept IDs found.")
 
-    # Save the JSON data to a file
-    with open(json_file_path, 'w') as json_file:
-        json.dump(json_data, json_file, indent=2)
+        if missing_ids:
+            print("  Missing IDs in skip logic:")
+            for skip_id, label in missing_ids.items():
+                print(f"    ID '{skip_id}' not found, used in label '{label}'")
+            print(f"  Total missing IDs: {len(missing_ids)}")
+        else:
+            print("  No missing IDs in skip logic found.")
+        print()
 
-# Load the form schema template
-form_schema_path = 'O3_form_schema_template.json'
-with open(form_schema_path, 'r') as file:
-    form_schema = json.load(file)
+# Generate forms and save as JSON
+output_dir = './forms'
+os.makedirs(output_dir, exist_ok=True)
 
-# Example usage
-xls_file_path = 'F01-MHPSS_Baseline.xlsx'
-json_file_path = 'F01-MHPSS_Baseline.json'
-xls_to_json(xls_file_path, json_file_path, form_schema)
+all_concept_ids = set()
+all_forms = []
+
+for sheet in sheets:
+    form, concept_ids = generate_form(sheet)
+    json_data = json.dumps(form, indent=4)
+    try:
+        json.loads(json_data)  # Validate JSON format
+        with open(os.path.join(output_dir, f"{sheet}.json"), 'w') as f:
+            f.write(json_data)
+        print(f"Form for sheet {sheet} generated successfully!")
+    except json.JSONDecodeError as e:
+        print(f"JSON format error in form generated from sheet {sheet}: {e}")
+    
+    all_concept_ids.update(concept_ids)
+    all_forms.append(form)
+
+check_missing_concepts(all_forms, all_concept_ids)
+print("Forms generation completed!")
