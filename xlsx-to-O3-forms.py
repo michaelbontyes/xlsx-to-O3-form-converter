@@ -92,7 +92,9 @@ def generate_question(row, columns, concept_ids):
     rendering = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
     validation_format = row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else ''
 
-    if rendering == 'coded' and validation_format == 'Multiple choice':
+    if rendering == 'coded':
+        rendering = 'radio'
+    elif rendering == 'coded' and validation_format == 'Multiple choice':
         rendering = 'radio'
     elif rendering == 'boolean':
         rendering = 'radio'
