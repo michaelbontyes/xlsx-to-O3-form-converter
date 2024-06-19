@@ -60,8 +60,13 @@ def build_skip_logic_expression(expression: str) -> str:
     
     if match:
         question_id, operator, conditional_answer = match.groups()
+        if operator == '<>':
+            operator = '!=='
+        elif operator != '!==':
+            return 'Only conditional operator "different than" noted !== is supported'
+        
         conditional_answer = clean_text(conditional_answer, type='question_answer_label')
-        question_id_camel = camel_case(question_id)
+        question_id_camel = clean_text(question_id, type='id')
         return f"{question_id_camel} {operator} '{conditional_answer}'"
     else:
         return "Invalid expression format"
