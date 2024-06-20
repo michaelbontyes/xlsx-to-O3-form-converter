@@ -29,18 +29,18 @@ def clean_text(text, type=''):
         return ''
     text = str(text)
     if type == 'question_label':
-        text = re.sub(r'^\d+([.,]\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
+        text = re.sub(r'^\d+(\.\d+)?\s*', '', text) # Remove numerical prefixes like "1. ", "1.1 "
         text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
-    if type == 'id':
+    if type == 'id': 
+        text = re.sub(r'\d+\.\s?', '', text)
         text = camel_case(text)
-        text = re.sub(r'\s*-\s*', '_', text)  # Replace hyphen surrounded by spaces with underscore
-        text = re.sub(r'[^a-zA-Z0-9_]', '', text)  # Remove any other non-alphanumeric characters
+        text = re.sub(r'[^a-zA-Z0-9_-]', '', text)  # Remove any other non-alphanumeric characters
         text = re.sub(r'^_+|_+$', '', text)  # Remove leading and trailing underscores
         text = re.sub(r'_+', '_', text)  # Replace multiple underscores with a single underscore
         return text
     if type == 'question_answer_label':
-        text = re.sub(r'^\d+([.,]\d+)?\s*|\.\s*', '', text)  # Remove numerical prefixes like "1. ", "2 ", "0 - ", "1 - "
+        text = re.sub(r'\d+\.\s?', '', text)
         text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
     else:
@@ -51,6 +51,9 @@ def clean_text(text, type=''):
 # Function to generate an external ID
 def generate_external_id():
     return str(uuid4())
+
+def is_other(text):
+    return clean_text(text, type='id').lower() == 'other'
 
 # Function to modify skip logic expressions
 def build_skip_logic_expression(expression: str) -> str:
@@ -65,11 +68,19 @@ def build_skip_logic_expression(expression: str) -> str:
         elif operator != '!==':
             return 'Only conditional operator "different than" noted !== is supported'
         
-        conditional_answer = clean_text(conditional_answer, type='question_answer_label')
+        conditional_answer = clean_text(question_id+" "+conditional_answer, type='id') if conditional_answer.lower() == 'other' else clean_text(conditional_answer, type='id')
         question_id_camel = clean_text(question_id, type='id')
         return f"{question_id_camel} {operator} '{conditional_answer}'"
     else:
         return "Invalid expression format"
+
+def get_answer_concept_id(opt, cleaned_question_label):
+    if 'External ID' in opt and pd.notnull(opt['External ID']):
+        return opt['External ID']
+    elif 'Label if different' in opt and pd.notnull(opt['Label if different']):
+        return clean_text(cleaned_question_label+" "+opt['Label if different'], type='id') if is_other(opt['Label if different']) or is_other(opt['Answers']) else clean_text(opt['Label if different'], type='id')
+    else:
+        return clean_text(cleaned_question_label+" "+opt['Answers'], type='id') if is_other(opt['Answers']) else clean_text(opt['Answers'], type='id')
 
 # Function to safely parse JSON
 def safe_json_loads(s):
@@ -128,7 +139,7 @@ def generate_question(row, columns, concept_ids):
         question['questionOptions']['answers'] = [
             {
                 "label": clean_text(opt['Label if different'] if 'Label if different' in opt and pd.notnull(opt['Label if different']) else opt['Answers'], type='question_answer_label'),
-                "concept": opt['External ID'] if 'External ID' in columns and pd.notnull(opt['External ID']) else generate_external_id()
+                "concept": get_answer_concept_id(opt, cleaned_question_label)
             } for opt in options
         ]
 
