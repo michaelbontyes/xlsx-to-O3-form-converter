@@ -23,6 +23,30 @@ def camel_case(text):
         camel_case += word.capitalize()
     return camel_case
 
+def remove_prefixes(text):
+    # Regex to match prefixes like "1 - Text", "1. Text", "1.1 Text", and ". Text"
+    prefix_pattern = re.compile(r'^\d+(\.\d+)*(\s*-\s*|\.\s*)\w+')
+    
+    # Split the text into lines and process each line individually
+    lines = text.splitlines()
+    processed_lines = []
+    
+    for line in lines:
+        # If the line matches the prefix pattern, remove the prefix
+        if prefix_pattern.match(line):
+            # Find the position of the first space after the prefix pattern
+            match = prefix_pattern.match(line)
+            end_pos = match.end()
+            # Remove the prefix
+            processed_line = line[end_pos:].lstrip()
+        else:
+            processed_line = line
+        processed_lines.append(processed_line)
+    
+    #print('\n'.join(processed_lines))
+    return '\n'.join(processed_lines)
+
+
 # Function to clean up text for labels and IDs
 def clean_text(text, type=''):
     if pd.isnull(text):
@@ -33,14 +57,13 @@ def clean_text(text, type=''):
         text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
     if type == 'id': 
-        text = re.sub(r'\d+\.\s?', '', text)
-        text = camel_case(text)
+        text = remove_prefixes(text)
         text = re.sub(r'[^a-zA-Z0-9_-]', '', text)  # Remove any other non-alphanumeric characters
         text = re.sub(r'^_+|_+$', '', text)  # Remove leading and trailing underscores
         text = re.sub(r'_+', '_', text)  # Replace multiple underscores with a single underscore
         return text
     if type == 'question_answer_label':
-        text = re.sub(r'\d+\.\s?', '', text)
+        text = remove_prefixes(text)
         text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
         return text
     else:
@@ -178,52 +201,6 @@ def generate_form(sheet_name):
 
 import re
 
-# Function to check for missing concept IDs in calculations and skip logic expressions
-def check_missing_concepts(forms, concept_ids):
-    for form in forms:
-        form_name = form["name"]
-        missing_concepts = {}
-        missing_ids = {}
-
-        form_ids = {question["id"] for page in form["pages"] for section in page["sections"] for question in section["questions"]}
-
-        for page in form["pages"]:
-            for section in page["sections"]:
-                for question in section["questions"]:
-                    if 'questionOptions' in question:
-                        if 'calculate' in question['questionOptions']:
-                            calculation_concepts = re.findall(r"'([^']+)'", question['questionOptions']['calculate']['calculateExpression'])
-                            for calc_concept in calculation_concepts:
-                                if calc_concept not in concept_ids:
-                                    missing_concepts[calc_concept] = question['label']
-                        if 'hide' in question:
-                            skip_logic_concepts = re.findall(r"'([^']+)'", question['hide']['hideWhenExpression'])
-                            for skip_concept in skip_logic_concepts:
-                                if skip_concept not in concept_ids:
-                                    missing_concepts[skip_concept] = question['label']
-                            skip_logic_ids = re.findall(r"\[([^\]]+)\]", question['hide']['hideWhenExpression'])
-                            for skip_id in skip_logic_ids:
-                                if skip_id not in form_ids:
-                                    missing_ids[skip_id] = question['label']
-
-        print(f"Form: {form_name}")
-        if missing_concepts:
-            print("  Missing concept IDs:")
-            for concept, label in missing_concepts.items():
-                print(f"    Concept ID '{concept}' not found, used in label '{label}'")
-            print(f"  Total missing concept IDs: {len(missing_concepts)}")
-        else:
-            print("  No missing concept IDs found.")
-
-        if missing_ids:
-            print("  Missing IDs in skip logic:")
-            for skip_id, label in missing_ids.items():
-                print(f"    ID '{skip_id}' not found, used in label '{label}'")
-            print(f"  Total missing IDs: {len(missing_ids)}")
-        else:
-            print("  No missing IDs in skip logic found.")
-        print()
-
 # Generate forms and save as JSON
 output_dir = './forms'
 os.makedirs(output_dir, exist_ok=True)
@@ -245,5 +222,5 @@ for sheet in sheets:
     all_concept_ids.update(concept_ids)
     all_forms.append(form)
 
-check_missing_concepts(all_forms, all_concept_ids)
+#check_missing_concepts(all_forms, all_concept_ids)
 print("Forms generation completed!")
