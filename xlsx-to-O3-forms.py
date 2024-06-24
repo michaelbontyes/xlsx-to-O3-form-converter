@@ -40,8 +40,8 @@ def manage_rendering(rendering, validation_format):
 def manage_label(original_label):
     # Clean the label
     label = remove_prefixes(original_label)
-    # Remove any other non-alphanumeric characters except spaces, (), -, _, and /
-    label = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/\.]', '', label)
+    # Remove any other non-alphanumeric characters except spaces, (), -, _, /, ., <, and >
+    label = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/\.<>]', '', label)
     # Remove leading ". " prefixes
     label = re.sub(r'^\.\s*', '', label)
     return label
@@ -73,13 +73,15 @@ def remove_prefixes(text):
     Returns:
     str: The string with the prefixes removed.
     """
-    # Regular expression to match prefixes like "1. ", "1.1 ", "1.1.1 ", etc.
-    pattern = r'^\d+(\.\d+)*\s*'
-    
-    # Use re.sub to remove the matched prefix
-    cleaned_text = re.sub(pattern, '', text)
-    
-    return cleaned_text
+    if not detect_range_prefixes(text):
+        # Use re.sub to remove the matched prefix
+        text = re.sub(r'^\d+(\.\d+)*\s*', '', text)
+    return text
+
+def detect_range_prefixes(text):
+    pattern = r"(\d+-\d+|\> \d+|< \d+|\d+ - \d+|\d+-\d+)"
+    matches = re.findall(pattern, text)
+    return bool(matches)
 
 def camel_case(text):
     words = text.split()
