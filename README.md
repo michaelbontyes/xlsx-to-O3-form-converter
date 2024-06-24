@@ -1,3 +1,6 @@
+
+![Python Lint and Test](https://github.com/michaelbontyes/xlsx-to-O3-form-converter/actions/workflows/pylint.yml/badge.svg)
+
 # XLSX to O3 Forms Converter
 
 ## Introduction
