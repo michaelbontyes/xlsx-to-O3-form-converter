@@ -1,7 +1,6 @@
 import pandas as pd
 import json
 import os
-from uuid import uuid4
 import re
 
 # Load the metadata
@@ -16,67 +15,78 @@ sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up']
 def get_options(option_set_name):
     return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
 
+# Function to safely parse JSON
+def safe_json_loads(s):
+    try:
+        return json.loads(s)
+    except (ValueError, TypeError):
+        return None
+
+# Manage rendering options
+def manage_rendering(rendering, validation_format):
+    if rendering == 'coded':
+        rendering = 'radio'
+    elif rendering == 'coded' and validation_format == 'multiple choice':
+        rendering = 'radio'
+    elif rendering == 'boolean':
+        rendering = 'radio'
+    elif rendering == 'numeric':
+        rendering = 'numeric'
+    elif rendering == 'text':
+        rendering = 'text'
+    return rendering
+
+# Manage labels
+def manage_label(original_label):
+    # Clean the label
+    label = remove_prefixes(original_label)
+    # Remove any other non-alphanumeric characters except spaces, (), -, _, and /
+    label = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/\.]', '', label)
+    # Remove leading ". " prefixes
+    label = re.sub(r'^\.\s*', '', label)
+    return label
+
+# Manage IDs
+def manage_id(original_id, id_type="question", question_id="None"):
+    # Clean the ID
+    id = remove_prefixes(original_id)
+    id = re.sub(r'\s*\(.*?\)', '', id)
+    id = re.sub(r'/', ' Or ', id) # Replace "/" with "Or"
+    id = re.sub(r'-', ' ', id) # Replace "-" with a space
+    id = re.sub(r'_', ' ', id) # Replace "_" with a space
+    id = camel_case(id)
+    id = re.sub(r'[^a-zA-Z0-9_-]', '', id)  # Remove any other non-alphanumeric characters
+    id = re.sub(r'^_+|_+$', '', id)  # Remove leading and trailing underscores
+    id = re.sub(r'_+', '_', id)  # Replace multiple underscores with a single underscore
+    if id_type == "answer" and id == 'other':
+        id = question_id+id.capitalize()
+    return id
+
+def remove_prefixes(text):
+    """
+    Remove numerical prefixes from the beginning of the string.
+    Examples of prefixes: "1. ", "1.1 ", "1.1.1 ", etc.
+    
+    Parameters:
+    text (str): The input string from which to remove prefixes.
+    
+    Returns:
+    str: The string with the prefixes removed.
+    """
+    # Regular expression to match prefixes like "1. ", "1.1 ", "1.1.1 ", etc.
+    pattern = r'^\d+(\.\d+)*\s*'
+    
+    # Use re.sub to remove the matched prefix
+    cleaned_text = re.sub(pattern, '', text)
+    
+    return cleaned_text
+
 def camel_case(text):
     words = text.split()
     camel_case = words[0].lower()
     for word in words[1:]:
         camel_case += word.capitalize()
     return camel_case
-
-def remove_prefixes(text):
-    # Regex to match prefixes like "1 - Text", "1. Text", "1.1 Text", and ". Text"
-    prefix_pattern = re.compile(r'^\d+(\.\d+)*(\s*-\s*|\.\s*)\w+')
-    
-    # Split the text into lines and process each line individually
-    lines = text.splitlines()
-    processed_lines = []
-    
-    for line in lines:
-        # If the line matches the prefix pattern, remove the prefix
-        if prefix_pattern.match(line):
-            # Find the position of the first space after the prefix pattern
-            match = prefix_pattern.match(line)
-            end_pos = match.end()
-            # Remove the prefix
-            processed_line = line[end_pos:].lstrip()
-        else:
-            processed_line = line
-        processed_lines.append(processed_line)
-    
-    #print('\n'.join(processed_lines))
-    return '\n'.join(processed_lines)
-
-
-# Function to clean up text for labels and IDs
-def clean_text(text, type=''):
-    if pd.isnull(text):
-        return ''
-    text = str(text)
-    if type == 'question_label':
-        text = re.sub(r'^\d+(\.\d+)?\s*', '', text) # Remove numerical prefixes like "1. ", "1.1 "
-        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
-        return text
-    if type == 'id': 
-        text = remove_prefixes(text)
-        text = re.sub(r'[^a-zA-Z0-9_-]', '', text)  # Remove any other non-alphanumeric characters
-        text = re.sub(r'^_+|_+$', '', text)  # Remove leading and trailing underscores
-        text = re.sub(r'_+', '_', text)  # Replace multiple underscores with a single underscore
-        return text
-    if type == 'question_answer_label':
-        text = remove_prefixes(text)
-        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
-        return text
-    else:
-        text = re.sub(r'[^a-zA-Z0-9\s\(\)\-_\/]', '', text)  # Remove any other non-alphanumeric characters except spaces, (), -, _, and /
-        text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
-        return text
-
-# Function to generate an external ID
-def generate_external_id():
-    return str(uuid4())
-
-def is_other(text):
-    return clean_text(text, type='id').lower() == 'other'
 
 # Function to modify skip logic expressions
 def build_skip_logic_expression(expression: str) -> str:
@@ -91,65 +101,48 @@ def build_skip_logic_expression(expression: str) -> str:
         elif operator != '!==':
             return 'Only conditional operator "different than" noted !== is supported'
         
-        conditional_answer = clean_text(question_id+" "+conditional_answer, type='id') if conditional_answer.lower() == 'other' else clean_text(conditional_answer, type='id')
-        question_id_camel = clean_text(question_id, type='id')
-        return f"{question_id_camel} {operator} '{conditional_answer}'"
+        question_id = manage_id(question_id)
+        conditional_answer = manage_id(conditional_answer, id_type="answer", question_id=question_id)
+        
+        return f"{question_id} {operator} '{conditional_answer}'"
     else:
         return "Invalid expression format"
-
-def get_answer_concept_id(opt, cleaned_question_label):
-    if 'External ID' in opt and pd.notnull(opt['External ID']):
-        return opt['External ID']
-    elif 'Label if different' in opt and pd.notnull(opt['Label if different']):
-        return clean_text(cleaned_question_label+" "+opt['Label if different'], type='id') if is_other(opt['Label if different']) or is_other(opt['Answers']) else clean_text(opt['Label if different'], type='id')
-    else:
-        return clean_text(cleaned_question_label+" "+opt['Answers'], type='id') if is_other(opt['Answers']) else clean_text(opt['Answers'], type='id')
-
-# Function to safely parse JSON
-def safe_json_loads(s):
-    try:
-        return json.loads(s)
-    except (ValueError, TypeError):
-        return None
 
 # Function to generate question JSON
 def generate_question(row, columns, concept_ids):
     if row.isnull().all() or pd.isnull(row['Question']):
         return None  # Skip empty rows or rows with empty 'Question'
     
-    cleaned_question_label = clean_text(row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question'], type='question_label')
-    question_id = clean_text(cleaned_question_label, type='id')
-    concept_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else generate_external_id()
-    
-    concept_ids.add(concept_id)  # Add the concept ID to the set
-    
-    rendering = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
+    # Manage values and default values
+    original_question_label = row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question']
+    question_label = manage_label(original_question_label)
+    question_id = manage_id(original_question_label)
+    question_concept_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else question_id
+    question_type = "obs"
+    question_datatype = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
     validation_format = row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else ''
+    question_required = str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and pd.notnull(row['Mandatory']) else False
+    question_rendering = manage_rendering(question_datatype, validation_format)
+    question_validators = safe_json_loads(row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else '')
 
-    if rendering == 'coded':
-        rendering = 'radio'
-    elif rendering == 'coded' and validation_format == 'Multiple choice':
-        rendering = 'radio'
-    elif rendering == 'boolean':
-        rendering = 'radio'
-
+    # Build the question JSON
     question = {
-        "label": cleaned_question_label,
-        "type": "obs",  
-        "required": str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and pd.notnull(row['Mandatory']) else False,
+        "label": question_label,
+        "type": question_type,  
+        "required": question_required,
         "id": question_id,
         "questionOptions": {
-            "rendering": rendering,
-            "concept": concept_id
+            "rendering": question_rendering,
+            "concept": question_concept_id
         },
-        "validators": safe_json_loads(row['Validation (format)']) if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else []
+        "validators": question_validators
     }
     
     if 'Default value' in columns and pd.notnull(row['Default value']):
         question['default'] = row['Default value']
     
     if 'Question' in columns and pd.notnull(row['Question']):
-        question['questionInfo'] = row['Question']
+        question['questionInfo'] = question_label
         
     if 'Calculation' in columns and pd.notnull(row['Calculation']):
         question['questionOptions']['calculate'] = {"calculateExpression": row['Calculation']}
@@ -161,8 +154,8 @@ def generate_question(row, columns, concept_ids):
         options = get_options(row['OptionSet name'])
         question['questionOptions']['answers'] = [
             {
-                "label": clean_text(opt['Label if different'] if 'Label if different' in opt and pd.notnull(opt['Label if different']) else opt['Answers'], type='question_answer_label'),
-                "concept": get_answer_concept_id(opt, cleaned_question_label)
+                "label": manage_label(opt['Answers']),
+                "concept": opt['External ID'] if 'External ID' in columns and pd.notnull(opt['External ID']) else manage_id(opt['Answers'], id_type="answer", question_id=question_id),
             } for opt in options
         ]
 
