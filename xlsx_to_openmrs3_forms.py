@@ -29,13 +29,8 @@ def get_options(option_set_name):
     return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
 
 def safe_json_loads(s):
-    """_summary_
-
-    Args:
-        s (_type_): _description_
-
-    Returns:
-        _type_: _description_
+    """
+    Safe json loads.
     """
     try:
         return json.loads(s)
@@ -43,14 +38,8 @@ def safe_json_loads(s):
         return None
 
 def manage_rendering(rendering, validation_format):
-    """_summary_
-
-    Args:
-        rendering (_type_): _description_
-        validation_format (_type_): _description_
-
-    Returns:
-        _type_: _description_
+    """
+    Manage rendering options.
     """
     if rendering == 'coded':
         rendering = 'radio'
@@ -65,13 +54,14 @@ def manage_rendering(rendering, validation_format):
     return rendering
 
 def manage_label(original_label):
-    """_summary_
+    """
+    Manage labels.
 
     Args:
-        original_label (_type_): _description_
+        original_label (str): The original label.
 
     Returns:
-        _type_: _description_
+        str: The cleaned label.
     """
     # Clean the label
     label = remove_prefixes(original_label)
@@ -83,15 +73,16 @@ def manage_label(original_label):
 
 # Manage IDs
 def manage_id(original_id, id_type="question", question_id="None"):
-    """_summary_
+    """
+        Manage IDs.
 
     Args:
-        original_id (_type_): _description_
-        id_type (str, optional): _description_. Defaults to "question".
-        question_id (str, optional): _description_. Defaults to "None".
+        original_id (str): The original ID.
+        id_type (str, optional): The ID type. Defaults to "question".
+        question_id (str, optional): The question ID. Defaults to "None".
 
     Returns:
-        _type_: _description_
+        str: The cleaned ID.
     """
     cleaned_id = remove_prefixes(original_id)
     cleaned_id = re.sub(r'\s*\(.*?\)', '', cleaned_id)
@@ -136,26 +127,16 @@ def remove_prefixes(text):
     return text
 
 def detect_range_prefixes(text):
-    """_summary_
-
-    Args:
-        text (_type_): _description_
-
-    Returns:
-        _type_: _description_
+    """
+    Detect ranges in the beginning of the string.
     """
     pattern = r"(\d+-\d+|\> \d+|< \d+|\d+ - \d+|\d+-\d+)"
     matches = re.findall(pattern, text)
     return bool(matches)
 
 def camel_case(text):
-    """_summary_
-
-    Args:
-        text (_type_): _description_
-
-    Returns:
-        _type_: _description_
+    """
+    Camel case a string.
     """
     words = text.split()
     camel_case_text = words[0].lower()  # Move this line outside the function
@@ -164,13 +145,14 @@ def camel_case(text):
     return camel_case_text
 
 def build_skip_logic_expression(expression: str) -> str:
-    """_summary_
+    """
+    Build a skip logic expression from an expression string.
 
     Args:
-        expression (str): _description_
+        expression (str): An expression string.
 
     Returns:
-        str: _description_
+        str: A skip logic expression.
     """
     # Regex pattern to match the required parts
     pattern = r"\[([^\]]+)\]\s*(<>|!==|==)\s*'([^']*)'"
@@ -190,15 +172,15 @@ def build_skip_logic_expression(expression: str) -> str:
     return "Invalid expression format"
 
 def generate_question(row, columns):
-    """_summary_
+    """
+        Generate a question JSON from a row of the OptionSets sheet.
 
     Args:
-        row (_type_): _description_
-        columns (_type_): _description_
-        concept_ids (_type_): _description_
+        row (pandas.Series): A row of the OptionSets sheet.
+        columns (list): A list of column names in the OptionSets sheet.
 
     Returns:
-        _type_: _description_
+        dict: A question JSON.
     """
     if row.isnull().all() or pd.isnull(row['Question']):
         return None  # Skip empty rows or rows with empty 'Question'
@@ -267,13 +249,14 @@ def generate_question(row, columns):
     return question
 
 def generate_form(sheet_name):
-    """_summary_
+    """
+    Generate a form JSON from a sheet of the OptionSets sheet.
 
     Args:
-        sheet_name (_type_): _description_
+        sheet_name (str): The name of the sheet in the OptionSets sheet.
 
     Returns:
-        _type_: _description_
+        dict: A form JSON.
     """
     form_data = {
         "name": sheet_name,
