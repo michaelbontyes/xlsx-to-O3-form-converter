@@ -121,16 +121,21 @@ def generate_question(row, columns, concept_ids):
         return None  # Skip empty rows or rows with empty 'Question'
 
     # Manage values and default values
-    original_question_label = row['Label if different'] if 'Label if different' in columns and pd.notnull(row['Label if different']) else row['Question']
+original_question_label = row['Label if different'] if 'Label if different' in columns and
+pd.notnull(row['Label if different']) else row['Question']
     question_label = manage_label(original_question_label)
     question_id = manage_id(original_question_label)
-    question_concept_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External ID']) else question_id
+question_concept_id = row['External ID'] if 'External ID' in columns and pd.notnull(row['External
+ID']) else question_id
     question_type = "obs"
     question_datatype = row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio'
-    validation_format = row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else ''
-    question_required = str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and pd.notnull(row['Mandatory']) else False
+validation_format = row['Validation (format)'] if 'Validation (format)' in columns and
+pd.notnull(row['Validation (format)']) else ''
+question_required = str(row['Mandatory']).lower() == 'true' if 'Mandatory' in columns and
+pd.notnull(row['Mandatory']) else False
     question_rendering = manage_rendering(question_datatype, validation_format)
-    question_validators = safe_json_loads(row['Validation (format)'] if 'Validation (format)' in columns and pd.notnull(row['Validation (format)']) else '')
+question_validators = safe_json_loads(row['Validation (format)'] if 'Validation (format)' in columns
+and pd.notnull(row['Validation (format)']) else '')
 
     # Build the question JSON
     question = {
@@ -162,7 +167,8 @@ def generate_question(row, columns, concept_ids):
         question['questionOptions']['answers'] = [
             {
                 "label": manage_label(opt['Answers']),
-                "concept": opt['External ID'] if 'External ID' in columns and pd.notnull(opt['External ID']) else manage_id(opt['Answers'], id_type="answer", question_id=question_id),
+"concept": opt['External ID'] if 'External ID' in columns and pd.notnull(opt['External ID']) else
+manage_id(opt['Answers'], id_type="answer", question_id=question_id),
             } for opt in options
         ]
 
@@ -175,8 +181,9 @@ def generate_form(sheet_name):
         "pages": []
     }
 
-    df = pd.read_excel(metadata_file, sheet_name=sheet_name, header=1)  # Adjust header to start from row 2
-    # print(f"Columns in {sheet_name} sheet: {df.columns.tolist()}")  # Display the columns in the sheet
+df = pd.read_excel(metadata_file, sheet_name=sheet_name, header=1) # Adjust header to start from row
+2
+# print(f"Columns in {sheet_name} sheet: {df.columns.tolist()}") # Display the columns in the sheet
     columns = df.columns.tolist()
 
     concept_ids = set()  # Initialize a set to keep track of concept IDs
@@ -184,8 +191,9 @@ def generate_form(sheet_name):
     sections = df['Section'].unique()
     for section in sections:
         section_df = df[df['Section'] == section]
-        section_label = section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0]) else ''
-        questions = [generate_question(row, columns, concept_ids) for _, row in section_df.iterrows() if not row.isnull().all() and pd.notnull(row['Question'])]
+section_label = section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0]) else ''
+questions = [generate_question(row, columns, concept_ids) for _, row in section_df.iterrows() if not
+row.isnull().all() and pd.notnull(row['Question'])]
         questions = [q for q in questions if q is not None]
 
         form["pages"].append({
