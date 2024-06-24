@@ -1,12 +1,15 @@
-import pandas as pd
+"""
+This module processes Excel sheets into JSON forms compatible with OpenMRS 3.
+"""
+
 import json
 import os
 import re
+import pandas as pd
 
 # Load the metadata
-metadata_file = 'metadata.xlsx'
-# Adjust header to start from row 2
-option_sets = pd.read_excel(metadata_file, sheet_name='OptionSets', header=1)
+METADATA_FILE = 'metadata.xlsx'
+option_sets = pd.read_excel(METADATA_FILE, sheet_name='OptionSets', header=1)  # Adjust header to start from row 2
 sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up']
 
 # Print the columns in the OptionSets sheet to verify
