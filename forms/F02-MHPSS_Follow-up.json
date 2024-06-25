@@ -1,12 +1,20 @@
 {
     "name": "F02-MHPSS_Follow-up",
+    "description": "MSF Form - F02-MHPSS_Follow-up",
+    "version": "1",
+    "published": true,
+    "uuid": "",
+    "processor": "EncounterFormProcessor",
+    "encounter": "Consultation",
+    "retired": false,
+    "referencedForms": [],
     "pages": [
         {
             "label": "Page 1",
             "sections": [
                 {
                     "label": "Consultation information",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Session number",
@@ -221,7 +229,7 @@
             "sections": [
                 {
                     "label": "Missed session",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "The patient did not come",
@@ -330,7 +338,7 @@
             "sections": [
                 {
                     "label": "Patient\u2019s progress",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Patients progress since the last session how has the patient been feeling/how have things been going in the patients life",
@@ -353,7 +361,7 @@
             "sections": [
                 {
                     "label": "Resilience & coping",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Positive Functionality Is the patient capable of being independent caring for themselves (bathing/eating) going to work/school etc.",
@@ -412,7 +420,7 @@
             "sections": [
                 {
                     "label": "Main problem or reason for referral",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Main problem or reason for referral (Why is the patient coming to the MH department Write in patients words)",
@@ -435,7 +443,7 @@
             "sections": [
                 {
                     "label": "MHOS (required) - In the past week\u2026",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Did you have problems performing daily activities such as cooking bathing or chores outside the household",
@@ -662,7 +670,7 @@
             "sections": [
                 {
                     "label": "PHQ-9 (only for depression) - Over the last two weeks, how often have you been bothered by any of the following problems?",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Little interest or pleasure in doing things",
@@ -955,7 +963,7 @@
             "sections": [
                 {
                     "label": "CGI - Clinical Global Impression",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
@@ -1058,7 +1066,7 @@
             "sections": [
                 {
                     "label": "Evolution of symptoms/complaints",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Evolution of symptoms/complaints (since the last session have the patients symptoms or complaints changed Please describe in the patients words)",
@@ -1081,7 +1089,7 @@
             "sections": [
                 {
                     "label": "Clinical diagnosis",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Clinical diagnosis (only to be established by a psychologist)",
@@ -1200,7 +1208,7 @@
             "sections": [
                 {
                     "label": "Homework / action plan",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Homework / action plan (did the patient complete their homework Did it help improve the current situation Specify homework from previous session and results)",
@@ -1235,7 +1243,7 @@
             "sections": [
                 {
                     "label": "Risk Factors (since the last session. . .)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Has the patient had thoughts of death or suicide",
@@ -1572,7 +1580,7 @@
             "sections": [
                 {
                     "label": "Intervention",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Overall goals for therapy (what are you trying to accomplish over several sessions with the patient Try to be specific  define these with the patient. Only complete if goals for therapy have changed)",
@@ -1619,7 +1627,7 @@
             "sections": [
                 {
                     "label": "Follow-up",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Follow up session required (If no fill the Exit form)",

@@ -1,12 +1,20 @@
 {
     "name": "F01-MHPSS_Baseline",
+    "description": "MSF Form - F01-MHPSS_Baseline",
+    "version": "1",
+    "published": true,
+    "uuid": "",
+    "processor": "EncounterFormProcessor",
+    "encounter": "Consultation",
+    "retired": false,
+    "referencedForms": [],
     "pages": [
         {
             "label": "Page 1",
             "sections": [
                 {
                     "label": "Admission",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Admission type",
@@ -39,7 +47,7 @@
             "sections": [
                 {
                     "label": "Consultation information",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Type of consultation",
@@ -241,7 +249,7 @@
             "sections": [
                 {
                     "label": "Referral source",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Patient referred by",
@@ -342,7 +350,7 @@
             "sections": [
                 {
                     "label": "Main problem or reason for referral",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Main problem or reason for referral (Why is the patient coming to the MH department Write in patients words)",
@@ -365,7 +373,7 @@
             "sections": [
                 {
                     "label": "Current Symptoms or Complaints (What is the patient reporting / what are you seeing?)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Psychosomatic",
@@ -658,7 +666,7 @@
             "sections": [
                 {
                     "label": "Clinical diagnosis",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Clinical diagnosis (To be established only by psychologist)",
@@ -777,7 +785,7 @@
             "sections": [
                 {
                     "label": "Prioritize and write down the code of the three current symptoms or complaints (If current suicidal thoughts, recent suicide attempt, or current psychotic symptoms consider referral to psychologist /  mhGAP clinician)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Current symptoms or complaints 1",
@@ -1385,7 +1393,7 @@
             "sections": [
                 {
                     "label": "Current Symptoms or Complaints (continuation)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Main category of symptoms",
@@ -1504,7 +1512,7 @@
             "sections": [
                 {
                     "label": "MHOS (required) - In the past week\u2026",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Did you have problems performing daily activities such as cooking bathing or chores outside the household",
@@ -1734,7 +1742,7 @@
             "sections": [
                 {
                     "label": "PHQ-9 (only for depression) - Over the last two weeks, how often have you been bothered by any of the following problems?",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Little interest or pleasure in doing things",
@@ -2030,7 +2038,7 @@
             "sections": [
                 {
                     "label": "CGI - Clinical Global Impression",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "CGI-S score - How mentally ill is the patient at this time",
@@ -2087,7 +2095,7 @@
             "sections": [
                 {
                     "label": "Resilience & Coping",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Positive Functionality Is the patient capable of being independent caring for themselves (bathing/eating) going to work/school etc.",
@@ -2186,7 +2194,7 @@
             "sections": [
                 {
                     "label": "Risk Factors (in the last 6 months, except for question 8)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Has the patient had thoughts of death or suicide",
@@ -2613,7 +2621,7 @@
             "sections": [
                 {
                     "label": "Past / Precipitating Events (possible reasons or causes linked to current problem)",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Medical conditions",
@@ -2865,7 +2873,7 @@
             "sections": [
                 {
                     "label": "Prioritize and write down the code of the three main past or precipitating events",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Main past or precipitating events - 1",
@@ -3432,7 +3440,7 @@
             "sections": [
                 {
                     "label": "Intervention",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Overall Goals for therapy (what are you trying to accomplish over several sessions with the patient Try to be specific  define these with the patient)",
@@ -3479,7 +3487,7 @@
             "sections": [
                 {
                     "label": "Follow-up",
-                    "isExpanded": "true",
+                    "isExpanded": "false",
                     "questions": [
                         {
                             "label": "Follow up session required (If no fill the Exit form)",

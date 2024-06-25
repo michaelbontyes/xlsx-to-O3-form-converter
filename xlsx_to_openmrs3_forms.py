@@ -45,6 +45,8 @@ def manage_rendering(rendering, validation_format):
         rendering = 'radio'
     elif rendering == 'coded' and validation_format == 'multiple choice':
         rendering = 'radio'
+    elif rendering == 'coded' and validation_format == 'select extended':
+        rendering = 'radio'
     elif rendering == 'boolean':
         rendering = 'radio'
     elif rendering == 'numeric':
@@ -260,6 +262,14 @@ def generate_form(sheet_name):
     """
     form_data = {
         "name": sheet_name,
+        "description": "MSF Form - "+sheet_name,
+        "version": "1",
+        "published": True,
+        "uuid": "",
+        "processor": "EncounterFormProcessor",
+        "encounter": "Consultation",
+        "retired": False,
+        "referencedForms": [],
         "pages": []
     }
 
@@ -286,7 +296,7 @@ def generate_form(sheet_name):
             "label": f"Page {len(form_data['pages']) + 1}",
             "sections": [{
                 "label": section_label,
-                "isExpanded": "true",
+                "isExpanded": "false",
                 "questions": questions
             }]
         })
