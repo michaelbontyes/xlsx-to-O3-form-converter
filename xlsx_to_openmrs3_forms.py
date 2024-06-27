@@ -10,10 +10,10 @@ import pandas as pd
 METADATA_FILE = 'metadata.xlsx'
 # Adjust header to start from row 2
 option_sets = pd.read_excel(METADATA_FILE, sheet_name='OptionSets', header=1)
-sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up']
+sheets = ['F01-MHPSS_Baseline']
 
-# Print the columns in the OptionSets sheet to verify
-# print(f"Columns in OptionSets sheet: {option_sets.columns.tolist()}")
+# Define a global list to store all questions and answers
+all_questions_answers = []
 
 # Function to fetch options for a given option set
 def get_options(option_set_name):
@@ -27,6 +27,21 @@ def get_options(option_set_name):
         list: A list of dictionaries containing option set details.
     """
     return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
+
+def find_question_concept_by_label(questions_answers, question_label):
+    for question in questions_answers:
+        if question.get('question_id') == manage_id(question_label):
+            return question.get('question_id')
+    return manage_id(question_label)
+
+def find_answer_concept_by_label(questions_answers, question_id, answer_label):
+    for question in questions_answers:
+        if question.get('question_id') == manage_id(question_id):
+            for answer in question.get('questionOptions').get('answers', []):
+                if answer.get('label') == answer_label:
+                    print(answer.get('concept'))
+                    return answer.get('concept')
+    return manage_id(answer_label)
 
 def safe_json_loads(s):
     """
@@ -74,7 +89,7 @@ def manage_label(original_label):
     return label
 
 # Manage IDs
-def manage_id(original_id, id_type="question", question_id="None"):
+def manage_id(original_id, id_type="question", question_id="None", all_questions_answers=[]):
     """
         Manage IDs.
 
@@ -108,8 +123,16 @@ def manage_id(original_id, id_type="question", question_id="None"):
     cleaned_id = re.sub(r'^_+|_+$', '', cleaned_id)
     # Replace multiple underscores with a single underscore
     cleaned_id = re.sub(r'_+', '_', cleaned_id)
+    cleaned_id = cleaned_id[0].lower() + cleaned_id[1:]
     if id_type == "answer" and cleaned_id == 'other':
         cleaned_id = question_id+cleaned_id.capitalize()
+        #print(cleaned_id)
+    if all_questions_answers is not None:
+        duplicate_count = 1
+        original_cleaned_id = cleaned_id
+        while any(q['question_id'] == cleaned_id for q in all_questions_answers):
+            cleaned_id = f"{original_cleaned_id}_{duplicate_count}"
+            duplicate_count += 1
     return cleaned_id
 
 def remove_prefixes(text):
@@ -146,7 +169,7 @@ def camel_case(text):
         camel_case_text += word.capitalize()
     return camel_case_text
 
-def build_skip_logic_expression(expression: str) -> str:
+def build_skip_logic_expression(expression: str, questions_answers) -> str:
     """
     Build a skip logic expression from an expression string.
 
@@ -158,24 +181,36 @@ def build_skip_logic_expression(expression: str) -> str:
     """
     # Regex pattern to match the required parts
     pattern = r"\[([^\]]+)\]\s*(<>|!==|==)\s*'([^']*)'"
+    uuid_pattern = r'[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|[a-fA-F0-9]{32}'
     match = re.search(pattern, expression)
 
     if match:
-        question_id, operator, cond_answer = match.groups()
+        original_question_label, operator, original_cond_answer = match.groups()
         if operator == '<>':
             operator = '!=='
         elif operator != '!==':
             return 'Only conditional operator "different than" noted !== is supported'
+        
+        # Check if original_question_label is a 36 character UUID
+        if re.match(uuid_pattern, original_question_label):
+            question_id = original_question_label
+        else:
+            question_id = find_question_concept_by_label(questions_answers, original_question_label)
+        # Check if original_cond_answer is a 36 character UUID
+        if re.match(uuid_pattern, original_cond_answer):
+            cond_answer = original_cond_answer
+        else:
+            cond_answer = find_answer_concept_by_label(questions_answers, original_question_label, original_cond_answer)
 
-        question_id = manage_id(question_id)
-        cond_answer = manage_id(cond_answer, id_type="answer", question_id=question_id)
+        # print("original expression:", expression, " and updated expression:", f"{question_id} {operator} '{cond_answer}'")
 
         return f"{question_id} {operator} '{cond_answer}'"
+
     return "Invalid expression format"
 
-def generate_question(row, columns):
+def generate_question(row, columns, translations_data):
     """
-        Generate a question JSON from a row of the OptionSets sheet.
+    Generate a question JSON from a row of the OptionSets sheet.
 
     Args:
         row (pandas.Series): A row of the OptionSets sheet.
@@ -184,12 +219,17 @@ def generate_question(row, columns):
     Returns:
         dict: A question JSON.
     """
+    global all_questions_answers  # Access the global list
+
     if row.isnull().all() or pd.isnull(row['Question']):
         return None  # Skip empty rows or rows with empty 'Question'
 
     # Manage values and default values
     original_question_label = (row['Label if different'] if 'Label if different' in columns and
                             pd.notnull(row['Label if different']) else row['Question'])
+    
+    question_label_translation = (row['Translation - Question'] if 'Translation - Question' in columns and
+                            pd.notnull(row['Translation - Question']) else None)
 
     question_label = manage_label(original_question_label)
     question_id = manage_id(original_question_label)
@@ -213,16 +253,19 @@ def generate_question(row, columns):
 
     # Build the question JSON
     question = {
+        "id": question_id,
         "label": question_label,
         "type": question_type,
         "required": question_required,
-        "id": question_id,
         "questionOptions": {
             "rendering": question_rendering,
             "concept": question_concept_id
         },
         "validators": question_validators
     }
+
+    translations_data[question_label] = question_label_translation
+    print(question_label_translation)
 
     if 'Default value' in columns and pd.notnull(row['Default value']):
         question['default'] = row['Default value']
@@ -234,7 +277,7 @@ def generate_question(row, columns):
         question['questionOptions']['calculate'] = {"calculateExpression": row['Calculation']}
 
     if 'Skip logic' in columns and pd.notnull(row['Skip logic']):
-        question['hide'] = {"hideWhenExpression": build_skip_logic_expression(row['Skip logic'])}
+        question['hide'] = {"hideWhenExpression": build_skip_logic_expression(row['Skip logic'], all_questions_answers)}
 
     if 'OptionSet name' in columns and pd.notnull(row['OptionSet name']):
         options = get_options(row['OptionSet name'])
@@ -242,15 +285,30 @@ def generate_question(row, columns):
             {
                 "label": manage_label(opt['Answers']),
                 "concept": (opt['External ID'] if 'External ID' in columns and 
-                            pd.notnull(opt['External ID'])
-                            else manage_id(opt['Answers'], id_type="answer",
-                                        question_id=question_id)),
-            } for opt in options
+                                pd.notnull(opt['External ID'])
+                                else manage_id(opt['Answers'], id_type="answer",
+                                                question_id=question_id, 
+                                                all_questions_answers=all_questions_answers)),
+            }
+            for opt in options
         ]
 
-    return question
+        all_questions_answers.append({
+            "question_id": question['id'],
+            "question_label": question['label'],
+            "questionOptions": {
+                "concept": question['questionOptions']['concept'],
+                "answers": question['questionOptions']['answers']
+            }
+        })
 
-def generate_form(sheet_name):
+    # Output all_questions_answers into a JSON file
+    with open('all_questions_answers.json', 'w', encoding='utf-8') as f:
+        json.dump(all_questions_answers, f, indent=4)
+
+    return question, translations_data
+
+def generate_form(sheet_name, translations_data):
     """
     Generate a form JSON from a sheet of the OptionSets sheet.
 
@@ -280,28 +338,59 @@ def generate_form(sheet_name):
     # concept_ids is defined here, not inside the function
     concept_ids_set = set()
 
-    sections = df['Section'].unique()
-    for section in sections:
-        section_df = df[df['Section'] == section]
-        section_label = (section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0])
-                        else '')
+    pages = df['Page'].unique()
 
-        questions = [generate_question(row, columns)
-                    for _, row in section_df.iterrows()
-                    if not row.isnull().all() and pd.notnull(row['Question'])]
-
-        questions = [q for q in questions if q is not None]
+    for page in pages:
+        page_df = df[df['Page'] == page]
+        page_label = page
 
         form_data["pages"].append({
-            "label": f"Page {len(form_data['pages']) + 1}",
-            "sections": [{
-                "label": section_label,
-                "isExpanded": "false",
-                "questions": questions
-            }]
+            "label": f"{page_label} - page {len(form_data['pages']) + 1}", 
+            "sections": []
         })
 
+        sections = page_df['Section'].unique()
+
+        for section in sections:
+            section_df = page_df[page_df['Section'] == section]
+            section_label = (section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0])
+                            else '')
+
+            questions = [generate_question(row, columns, translations_data)
+                        for _, row in section_df.iterrows()
+                        if not row.isnull().all() and pd.notnull(row['Question'])]
+
+            questions = [q for q in questions if q is not None]
+
+            form_data["pages"][-1]["sections"].append({
+                "label": section_label,
+                "isExpanded": False,
+                "questions": questions
+            })
+
     return form_data, concept_ids_set
+
+def generate_translation_file(form_name, language, translations):
+    """
+    Generate a translation file JSON.
+
+    Args:
+        form_name (str): The name of the form.
+        language (str): The language of the translations.
+        translations (dict): A dictionary containing the translations.
+
+    Returns:
+        dict: A translation file JSON.
+    """
+    translation_file = {
+        "uuid": "",
+        "form": form_name,
+        "description": f"{language.capitalize()} Translations for '{form_name}'",
+        "language": language,
+        "translations": translations
+    }
+
+    return translation_file
 
 # Generate forms and save as JSON
 OUTPUT_DIR = './forms'
@@ -311,15 +400,23 @@ all_concept_ids = set()
 all_forms = []
 
 for sheet in sheets:
-    form, concept_ids = generate_form(sheet)
+    translations_data = {}
+    form, concept_ids = generate_form(sheet, translations_data)
+    translations = generate_translation_file(sheet, 'ar', translations_data)
     json_data = json.dumps(form, indent=4)
+    translations_json_data = json.dumps(translations, indent=4)
     try:
         json.loads(json_data)  # Validate JSON format
         with open(os.path.join(OUTPUT_DIR, f"{sheet}.json"), 'w', encoding='utf-8') as f:
             f.write(json_data)
         print(f"Form for sheet {sheet} generated successfully!")
+        json.loads(translations_json_data)  # Validate JSON format
+        with open(os.path.join(OUTPUT_DIR, f"{sheet}_translation_ar.json"), 'w', encoding='utf-8') as f:
+            f.write(translations_json_data.encode('utf-8').decode('unicode_escape'))
+        print(f"Form translations for sheet {sheet} generated successfully!")
     except json.JSONDecodeError as e:
         print(f"JSON format error in form generated from sheet {sheet}: {e}")
+        print(f"JSON format error in translations form generated from sheet {sheet}: {e}")
 
     all_concept_ids.update(concept_ids)
     all_forms.append(form)
