@@ -10,7 +10,7 @@ import pandas as pd
 METADATA_FILE = 'metadata.xlsx'
 # Adjust header to start from row 2
 option_sets = pd.read_excel(METADATA_FILE, sheet_name='OptionSets', header=1)
-sheets = ['F01-MHPSS_Baseline']
+sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up', 'F03-mhGAP_Baseline', 'F04-mhGAP_Follow-up', 'F05-MH_Closure']
 
 # Define a global list to store all questions and answers
 all_questions_answers = []
@@ -147,6 +147,8 @@ def remove_prefixes(text):
     str: The string with the prefixes removed.
     """
     if not detect_range_prefixes(text):
+        # Convert text to string before using re.sub
+        text = str(text)
         # Use re.sub to remove the matched prefix
         text = re.sub(r'^\d+(\.\d+)*\s*', '', text)
     return text
@@ -156,7 +158,7 @@ def detect_range_prefixes(text):
     Detect ranges in the beginning of the string.
     """
     pattern = r"(\d+-\d+|\> \d+|< \d+|\d+ - \d+|\d+-\d+)"
-    matches = re.findall(pattern, text)
+    matches = re.findall(pattern, str(text))  # Convert text to string
     return bool(matches)
 
 def camel_case(text):
@@ -306,7 +308,7 @@ def generate_question(row, columns, translations_data):
     with open('all_questions_answers.json', 'w', encoding='utf-8') as f:
         json.dump(all_questions_answers, f, indent=4)
 
-    return question, translations_data
+    return question
 
 def generate_form(sheet_name, translations_data):
     """

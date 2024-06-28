@@ -1,0 +1,1206 @@
+{
+    "name": "F03-mhGAP_Baseline",
+    "description": "MSF Form - F03-mhGAP_Baseline",
+    "version": "1",
+    "published": true,
+    "uuid": "",
+    "processor": "EncounterFormProcessor",
+    "encounter": "Consultation",
+    "retired": false,
+    "referencedForms": [],
+    "pages": [
+        {
+            "label": "mhGAP Baseline Consultation - page 1",
+            "sections": [
+                {
+                    "label": "Consultation information",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "admissionType",
+                            "label": "Admission type",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "admissionType",
+                                "answers": [
+                                    {
+                                        "label": "New admission",
+                                        "concept": "newAdmission"
+                                    },
+                                    {
+                                        "label": "Readmission",
+                                        "concept": "readmission"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Admission type"
+                        },
+                        {
+                            "id": "consultationDoneBy",
+                            "label": "Consultation done by",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "consultationDoneBy",
+                                "answers": [
+                                    {
+                                        "label": "Psychiatrist",
+                                        "concept": "psychiatrist"
+                                    },
+                                    {
+                                        "label": "mhGAP clinician",
+                                        "concept": "mhgapClinician"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Consultation done by"
+                        }
+                    ]
+                },
+                {
+                    "label": "History",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "presentingHistoryOrEvolutionOfSymptoms",
+                            "label": "Presenting history / evolution of symptoms (current symptoms onset duration course intensity triggers associated symptoms)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "presentingHistoryOrEvolutionOfSymptoms"
+                            },
+                            "validators": null,
+                            "questionInfo": "Presenting history / evolution of symptoms (current symptoms onset duration course intensity triggers associated symptoms)"
+                        },
+                        {
+                            "id": "pastPsychiatricHistory",
+                            "label": "Past psychiatric history (past diagnoses past substance use number of episodes duration treatment side-effects)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "pastPsychiatricHistory"
+                            },
+                            "validators": null,
+                            "questionInfo": "Past psychiatric history (past diagnoses past substance use number of episodes duration treatment side-effects)"
+                        },
+                        {
+                            "id": "familyHistory",
+                            "label": "Family history (psychological/psychiatric/neurological/medical conditions or disorders)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "familyHistory"
+                            },
+                            "validators": null,
+                            "questionInfo": "Family history (psychological/psychiatric/neurological/medical conditions or disorders)"
+                        },
+                        {
+                            "id": "patientMedicalOrSurgicalHistory",
+                            "label": "Patient medical / surgical history",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "patientMedicalOrSurgicalHistory"
+                            },
+                            "validators": null,
+                            "questionInfo": "Patient medical / surgical history"
+                        },
+                        {
+                            "id": "allergiesOrContraIndications",
+                            "label": "Allergies / Contra-indications",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "allergiesOrContraIndications"
+                            },
+                            "validators": null,
+                            "questionInfo": "Allergies / Contra-indications"
+                        }
+                    ]
+                },
+                {
+                    "label": "Special Populations",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "pregnantOrBreastfeeding",
+                            "label": "Pregnant / breastfeeding ",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "pregnantOrBreastfeeding"
+                            },
+                            "validators": null,
+                            "questionInfo": "Pregnant / breastfeeding "
+                        },
+                        {
+                            "id": "childOrAdolescent",
+                            "label": "Child / adolescent (under 18 years)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "childOrAdolescent"
+                            },
+                            "validators": null,
+                            "questionInfo": "Child / adolescent (under 18 years)"
+                        },
+                        {
+                            "id": "olderAdult",
+                            "label": "Older adult (over 60 years)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "olderAdult"
+                            },
+                            "validators": null,
+                            "questionInfo": "Older adult (over 60 years)"
+                        }
+                    ]
+                },
+                {
+                    "label": "mhGAP file information",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "patientAlreadyOnPsychotropicOrPsychiatricMedication",
+                            "label": "Patient already on psychotropic / psychiatric medication (not prescribed by MSF)  ",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "patientAlreadyOnPsychotropicOrPsychiatricMedication"
+                            },
+                            "validators": null,
+                            "questionInfo": "Patient already on psychotropic / psychiatric medication (not prescribed by MSF)  "
+                        },
+                        {
+                            "id": "medicationAndDosage",
+                            "label": "Medication and dosage",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medicationAndDosage"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication and dosage",
+                            "hide": {
+                                "hideWhenExpression": "Invalid expression format"
+                            }
+                        },
+                        {
+                            "id": "additionalInformationAboutPreviousTreatment",
+                            "label": "Additional information about previous treatment (including side effects)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "additionalInformationAboutPreviousTreatment"
+                            },
+                            "validators": null,
+                            "questionInfo": "Additional information about previous treatment (including side effects)"
+                        },
+                        {
+                            "id": "basicMentalStatusExamination",
+                            "label": "Basic mental status examination (appearance orientation speech / motor activity mood / affect thought / perception cognitive)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "basicMentalStatusExamination"
+                            },
+                            "validators": null,
+                            "questionInfo": "Basic mental status examination (appearance orientation speech / motor activity mood / affect thought / perception cognitive)"
+                        }
+                    ]
+                },
+                {
+                    "label": "Clinical diagnosis",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "clinicalDiagnosis",
+                            "label": "Clinical diagnosis (only to be established by mhGAP clinician)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "clinicalDiagnosis",
+                                "answers": [
+                                    {
+                                        "label": "Acute stress reaction",
+                                        "concept": "acuteStressReaction"
+                                    },
+                                    {
+                                        "label": "Bereavement/grief",
+                                        "concept": "bereavementOrGrief"
+                                    },
+                                    {
+                                        "label": "Post-Traumatic Stress Disorder",
+                                        "concept": "postTraumaticStressDisorder"
+                                    },
+                                    {
+                                        "label": "Conversion/Dissociative reaction",
+                                        "concept": "conversionOrDissociativeReaction"
+                                    },
+                                    {
+                                        "label": "Anxiety Disorder",
+                                        "concept": "anxietyDisorder"
+                                    },
+                                    {
+                                        "label": "Medically Unexplained Physical Symptoms (MUPS)",
+                                        "concept": "medicallyUnexplainedPhysicalSymptoms"
+                                    },
+                                    {
+                                        "label": "Depression",
+                                        "concept": "depression"
+                                    },
+                                    {
+                                        "label": "Self-harming behavior/suicide attempt",
+                                        "concept": "selfHarmingBehaviorOrSuicideAttempt"
+                                    },
+                                    {
+                                        "label": "Acute psychosis (incl. post-partum psychosis)",
+                                        "concept": "acutePsychosis"
+                                    },
+                                    {
+                                        "label": "Chronic psychosis (incl. schizophrenia)",
+                                        "concept": "chronicPsychosis"
+                                    },
+                                    {
+                                        "label": "Bipolar disorder (incl. mania)",
+                                        "concept": "bipolarDisorder"
+                                    },
+                                    {
+                                        "label": "Enuresis / Encopresis",
+                                        "concept": "enuresisOrEncopresis"
+                                    },
+                                    {
+                                        "label": "Developmental disorder (incl. intellectual disability autism)",
+                                        "concept": "developmentalDisorder"
+                                    },
+                                    {
+                                        "label": "Childhood behavioral disorder (incl. ADHD conduct disorder)",
+                                        "concept": "childhoodBehavioralDisorder"
+                                    },
+                                    {
+                                        "label": "Childhood emotional disorder",
+                                        "concept": "childhoodEmotionalDisorder"
+                                    },
+                                    {
+                                        "label": "Substance-related disorder",
+                                        "concept": "substanceRelatedDisorder"
+                                    },
+                                    {
+                                        "label": "Epilepsy / seizures",
+                                        "concept": "epilepsyOrSeizures"
+                                    },
+                                    {
+                                        "label": "Other disorder",
+                                        "concept": "otherDisorder"
+                                    },
+                                    {
+                                        "label": "No diagnosis",
+                                        "concept": "noDiagnosis"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Clinical diagnosis (only to be established by mhGAP clinician)",
+                            "hide": {
+                                "hideWhenExpression": "consultationDoneBy !== 'psychologist'"
+                            }
+                        },
+                        {
+                            "id": "clinicalDiagnosisIfOtherSpecify",
+                            "label": "Clinical diagnosis - If other specify",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "clinicalDiagnosisIfOtherSpecify"
+                            },
+                            "validators": null,
+                            "questionInfo": "Clinical diagnosis - If other specify",
+                            "hide": {
+                                "hideWhenExpression": "clinicalDiagnosis !== 'otherDisorder'"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "PHQ-9 (only for depression) - Over the last two weeks, how often have you been bothered by any of the following problems?",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "littleInterestOrPleasureInDoingThings",
+                            "label": "Little interest or pleasure in doing things",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "littleInterestOrPleasureInDoingThings",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Little interest or pleasure in doing things"
+                        },
+                        {
+                            "id": "feelingDownDepressedOrHopeless",
+                            "label": "Feeling down depressed or hopeless",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "feelingDownDepressedOrHopeless",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling down depressed or hopeless"
+                        },
+                        {
+                            "id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+                            "label": "Trouble falling or staying asleep or sleeping too much",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Trouble falling or staying asleep or sleeping too much"
+                        },
+                        {
+                            "id": "feelingTiredOrHavingLittleEnergy",
+                            "label": "Feeling tired or having little energy",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "feelingTiredOrHavingLittleEnergy",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling tired or having little energy"
+                        },
+                        {
+                            "id": "poorAppetiteOrOvereating",
+                            "label": "Poor appetite or overeating",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "poorAppetiteOrOvereating",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Poor appetite or overeating"
+                        },
+                        {
+                            "id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+                            "label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down"
+                        },
+                        {
+                            "id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+                            "label": "Trouble concentrating on things such as reading the newspaper or watching television",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Trouble concentrating on things such as reading the newspaper or watching television"
+                        },
+                        {
+                            "id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+                            "label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual"
+                        },
+                        {
+                            "id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+                            "label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "notAtAll"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "severalDays"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "moreThanHalfTheDays"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "nearlyEveryDay"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Thoughts that you would be better off dead or of hurting yourself in some way"
+                        },
+                        {
+                            "id": "phq9Score",
+                            "label": "PHQ-9 score",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "numeric",
+                                "concept": "phq9Score"
+                            },
+                            "validators": null,
+                            "questionInfo": "PHQ-9 score"
+                        }
+                    ]
+                },
+                {
+                    "label": "CGI - Clinical Global Impression",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "cgiS",
+                            "label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "cgiS",
+                                "answers": [
+                                    {
+                                        "label": "- Not assessed",
+                                        "concept": "notAssessed"
+                                    },
+                                    {
+                                        "label": "- Normal/not ill",
+                                        "concept": "normalOrNotIll"
+                                    },
+                                    {
+                                        "label": "- Suspected mentally ill",
+                                        "concept": "suspectedMentallyIll"
+                                    },
+                                    {
+                                        "label": "- Mildly ill",
+                                        "concept": "mildlyIll"
+                                    },
+                                    {
+                                        "label": "- Moderately ill",
+                                        "concept": "moderatelyIll"
+                                    },
+                                    {
+                                        "label": "- Markedly ill",
+                                        "concept": "markedlyIll"
+                                    },
+                                    {
+                                        "label": "- Severely ill",
+                                        "concept": "severelyIll"
+                                    },
+                                    {
+                                        "label": "- Extremely ill patient",
+                                        "concept": "extremelyIllPatient"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)"
+                        }
+                    ]
+                },
+                {
+                    "label": "Vitals & biometrics",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "weight",
+                            "label": "Weight",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "numeric",
+                                "concept": "weight"
+                            },
+                            "validators": null,
+                            "questionInfo": "Weight"
+                        },
+                        {
+                            "id": "bloodPressure",
+                            "label": "Blood Pressure",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "bloodPressure"
+                            },
+                            "validators": null,
+                            "questionInfo": "Blood Pressure"
+                        },
+                        {
+                            "id": "heartRate",
+                            "label": "Heart Rate",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "numeric",
+                                "concept": "heartRate"
+                            },
+                            "validators": null,
+                            "questionInfo": "Heart Rate"
+                        }
+                    ]
+                },
+                {
+                    "label": "MSF Pharmacological Treament",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "medication1Name",
+                            "label": "Medication 1 - Name",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "medication1Name",
+                                "answers": [
+                                    {
+                                        "label": "nan",
+                                        "concept": "nan"
+                                    },
+                                    {
+                                        "label": "Amitriptyline tab",
+                                        "concept": "amitriptylineTab"
+                                    },
+                                    {
+                                        "label": "Biperiden tab",
+                                        "concept": "biperidenTab"
+                                    },
+                                    {
+                                        "label": "Carbamazepine tab",
+                                        "concept": "carbamazepineTab"
+                                    },
+                                    {
+                                        "label": "Chlorpromazine tab",
+                                        "concept": "chlorpromazineTab"
+                                    },
+                                    {
+                                        "label": "Diazepam tab",
+                                        "concept": "diazepamTab"
+                                    },
+                                    {
+                                        "label": "Diphenhydramine tab",
+                                        "concept": "diphenhydramineTab"
+                                    },
+                                    {
+                                        "label": "Fluoxetine hydrochloride capsule",
+                                        "concept": "fluoxetineHydrochlorideCapsule"
+                                    },
+                                    {
+                                        "label": "Fluphenazine decanoate amp",
+                                        "concept": "fluphenazineDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Haloperidol tab",
+                                        "concept": "haloperidolTab"
+                                    },
+                                    {
+                                        "label": "Haloperidol decanoate amp",
+                                        "concept": "haloperidolDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Hydroxyzine dihydrochloride tab",
+                                        "concept": "hydroxyzineDihydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Olanzapine tab",
+                                        "concept": "olanzapineTab"
+                                    },
+                                    {
+                                        "label": "Paroxetine tab",
+                                        "concept": "paroxetineTab"
+                                    },
+                                    {
+                                        "label": "Promethazine hydrochloride tab",
+                                        "concept": "promethazineHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Risperidone tab",
+                                        "concept": "risperidoneTab"
+                                    },
+                                    {
+                                        "label": "Sertraline tab",
+                                        "concept": "sertralineTab"
+                                    },
+                                    {
+                                        "label": "Trihexyphenidyl hydrochloride tab",
+                                        "concept": "trihexyphenidylHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Valproate sodium tab",
+                                        "concept": "valproateSodiumTab"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "concept": "medication1NameOther"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 1 - Name"
+                        },
+                        {
+                            "id": "medication1DosageAm",
+                            "label": "Medication 1 - Dosage - AM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication1DosageAm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 1 - Dosage - AM"
+                        },
+                        {
+                            "id": "medication1DosageNoon",
+                            "label": "Medication 1 - Dosage - Noon",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication1DosageNoon"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 1 - Dosage - Noon"
+                        },
+                        {
+                            "id": "medication1DosagePm",
+                            "label": "Medication 1 - Dosage - PM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication1DosagePm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 1 - Dosage - PM"
+                        },
+                        {
+                            "id": "medication1TotalCapsOrTabsOrAmpoulesProvided",
+                            "label": "Medication 1 - Total caps/tabs/ampoules provided",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication1TotalCapsOrTabsOrAmpoulesProvided"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 1 - Total caps/tabs/ampoules provided"
+                        },
+                        {
+                            "id": "medication2Name",
+                            "label": "Medication 2 - Name",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "medication2Name",
+                                "answers": [
+                                    {
+                                        "label": "nan",
+                                        "concept": "nan"
+                                    },
+                                    {
+                                        "label": "Amitriptyline tab",
+                                        "concept": "amitriptylineTab"
+                                    },
+                                    {
+                                        "label": "Biperiden tab",
+                                        "concept": "biperidenTab"
+                                    },
+                                    {
+                                        "label": "Carbamazepine tab",
+                                        "concept": "carbamazepineTab"
+                                    },
+                                    {
+                                        "label": "Chlorpromazine tab",
+                                        "concept": "chlorpromazineTab"
+                                    },
+                                    {
+                                        "label": "Diazepam tab",
+                                        "concept": "diazepamTab"
+                                    },
+                                    {
+                                        "label": "Diphenhydramine tab",
+                                        "concept": "diphenhydramineTab"
+                                    },
+                                    {
+                                        "label": "Fluoxetine hydrochloride capsule",
+                                        "concept": "fluoxetineHydrochlorideCapsule"
+                                    },
+                                    {
+                                        "label": "Fluphenazine decanoate amp",
+                                        "concept": "fluphenazineDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Haloperidol tab",
+                                        "concept": "haloperidolTab"
+                                    },
+                                    {
+                                        "label": "Haloperidol decanoate amp",
+                                        "concept": "haloperidolDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Hydroxyzine dihydrochloride tab",
+                                        "concept": "hydroxyzineDihydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Olanzapine tab",
+                                        "concept": "olanzapineTab"
+                                    },
+                                    {
+                                        "label": "Paroxetine tab",
+                                        "concept": "paroxetineTab"
+                                    },
+                                    {
+                                        "label": "Promethazine hydrochloride tab",
+                                        "concept": "promethazineHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Risperidone tab",
+                                        "concept": "risperidoneTab"
+                                    },
+                                    {
+                                        "label": "Sertraline tab",
+                                        "concept": "sertralineTab"
+                                    },
+                                    {
+                                        "label": "Trihexyphenidyl hydrochloride tab",
+                                        "concept": "trihexyphenidylHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Valproate sodium tab",
+                                        "concept": "valproateSodiumTab"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "concept": "medication2NameOther"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 2 - Name"
+                        },
+                        {
+                            "id": "medication2DosageAm",
+                            "label": "Medication 2 - Dosage - AM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication2DosageAm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 2 - Dosage - AM"
+                        },
+                        {
+                            "id": "medication2DosageNoon",
+                            "label": "Medication 2 - Dosage - Noon",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication2DosageNoon"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 2 - Dosage - Noon"
+                        },
+                        {
+                            "id": "medication2DosagePm",
+                            "label": "Medication 2 - Dosage - PM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication2DosagePm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 2 - Dosage - PM"
+                        },
+                        {
+                            "id": "medication2TotalCapsOrTabsOrAmpoulesProvided",
+                            "label": "Medication 2 - Total caps/tabs/ampoules provided",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication2TotalCapsOrTabsOrAmpoulesProvided"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 2 - Total caps/tabs/ampoules provided"
+                        },
+                        {
+                            "id": "medication3Name",
+                            "label": "Medication 3 - Name",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "medication3Name",
+                                "answers": [
+                                    {
+                                        "label": "nan",
+                                        "concept": "nan"
+                                    },
+                                    {
+                                        "label": "Amitriptyline tab",
+                                        "concept": "amitriptylineTab"
+                                    },
+                                    {
+                                        "label": "Biperiden tab",
+                                        "concept": "biperidenTab"
+                                    },
+                                    {
+                                        "label": "Carbamazepine tab",
+                                        "concept": "carbamazepineTab"
+                                    },
+                                    {
+                                        "label": "Chlorpromazine tab",
+                                        "concept": "chlorpromazineTab"
+                                    },
+                                    {
+                                        "label": "Diazepam tab",
+                                        "concept": "diazepamTab"
+                                    },
+                                    {
+                                        "label": "Diphenhydramine tab",
+                                        "concept": "diphenhydramineTab"
+                                    },
+                                    {
+                                        "label": "Fluoxetine hydrochloride capsule",
+                                        "concept": "fluoxetineHydrochlorideCapsule"
+                                    },
+                                    {
+                                        "label": "Fluphenazine decanoate amp",
+                                        "concept": "fluphenazineDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Haloperidol tab",
+                                        "concept": "haloperidolTab"
+                                    },
+                                    {
+                                        "label": "Haloperidol decanoate amp",
+                                        "concept": "haloperidolDecanoateAmp"
+                                    },
+                                    {
+                                        "label": "Hydroxyzine dihydrochloride tab",
+                                        "concept": "hydroxyzineDihydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Olanzapine tab",
+                                        "concept": "olanzapineTab"
+                                    },
+                                    {
+                                        "label": "Paroxetine tab",
+                                        "concept": "paroxetineTab"
+                                    },
+                                    {
+                                        "label": "Promethazine hydrochloride tab",
+                                        "concept": "promethazineHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Risperidone tab",
+                                        "concept": "risperidoneTab"
+                                    },
+                                    {
+                                        "label": "Sertraline tab",
+                                        "concept": "sertralineTab"
+                                    },
+                                    {
+                                        "label": "Trihexyphenidyl hydrochloride tab",
+                                        "concept": "trihexyphenidylHydrochlorideTab"
+                                    },
+                                    {
+                                        "label": "Valproate sodium tab",
+                                        "concept": "valproateSodiumTab"
+                                    },
+                                    {
+                                        "label": "Other",
+                                        "concept": "medication3NameOther"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 3 - Name"
+                        },
+                        {
+                            "id": "medication3DosageAm",
+                            "label": "Medication 3 - Dosage - AM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication3DosageAm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 3 - Dosage - AM"
+                        },
+                        {
+                            "id": "medication3DosageNoon",
+                            "label": "Medication 3 - Dosage - Noon",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication3DosageNoon"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 3 - Dosage - Noon"
+                        },
+                        {
+                            "id": "medication3DosagePm",
+                            "label": "Medication 3 - Dosage - PM",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication3DosagePm"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 3 - Dosage - PM"
+                        },
+                        {
+                            "id": "medication3TotalCapsOrTabsOrAmpoulesProvided",
+                            "label": "Medication 3 - Total caps/tabs/ampoules provided",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "medication3TotalCapsOrTabsOrAmpoulesProvided"
+                            },
+                            "validators": null,
+                            "questionInfo": "Medication 3 - Total caps/tabs/ampoules provided"
+                        },
+                        {
+                            "id": "additionalInformationOrNotes",
+                            "label": "Additional information/notes",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "additionalInformationOrNotes"
+                            },
+                            "validators": null,
+                            "questionInfo": "Additional information/notes"
+                        }
+                    ]
+                },
+                {
+                    "label": "Follow-up",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "followUpRequired",
+                            "label": "Follow-up required",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "followUpRequired"
+                            },
+                            "validators": null,
+                            "questionInfo": "Follow-up required"
+                        },
+                        {
+                            "id": "nextAppointmentDate",
+                            "label": "Next appointment date (required if Follow-up required is Yes)",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "nextAppointmentDate"
+                            },
+                            "validators": null,
+                            "questionInfo": "Next appointment date (required if Follow-up required is Yes)",
+                            "hide": {
+                                "hideWhenExpression": "followUpRequired !== 'yes'"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

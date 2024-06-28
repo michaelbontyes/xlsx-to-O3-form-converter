@@ -2685,5 +2685,2396 @@
                 }
             ]
         }
+    },
+    {
+        "question_id": "typeOfConsultation",
+        "question_label": "Type of consultation",
+        "questionOptions": {
+            "concept": "typeOfConsultation",
+            "answers": [
+                {
+                    "label": "Individual",
+                    "concept": "individual"
+                },
+                {
+                    "label": "Couple",
+                    "concept": "couple"
+                },
+                {
+                    "label": "Family",
+                    "concept": "family"
+                },
+                {
+                    "label": "Parent-Child",
+                    "concept": "parentChild"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "consultationDoneBy",
+        "question_label": "Consultation done by",
+        "questionOptions": {
+            "concept": "consultationDoneBy",
+            "answers": [
+                {
+                    "label": "Psychologist",
+                    "concept": "psychologist"
+                },
+                {
+                    "label": "Counsellor",
+                    "concept": "counsellor"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "locationOfIntervention",
+        "question_label": "Location of intervention",
+        "questionOptions": {
+            "concept": "locationOfIntervention",
+            "answers": [
+                {
+                    "label": "Health facility",
+                    "concept": "healthFacility"
+                },
+                {
+                    "label": "MSF health facility",
+                    "concept": "msfHealthFacility"
+                },
+                {
+                    "label": "Mobile clinic",
+                    "concept": "mobileClinic"
+                },
+                {
+                    "label": "Home visit",
+                    "concept": "homeVisit"
+                },
+                {
+                    "label": "School visit",
+                    "concept": "schoolVisit"
+                },
+                {
+                    "label": "Remote / phone",
+                    "concept": "remoteOrPhone"
+                },
+                {
+                    "label": "Other",
+                    "concept": "locationOfInterventionOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "typeOfIntervention",
+        "question_label": "Type of intervention",
+        "questionOptions": {
+            "concept": "typeOfIntervention",
+            "answers": [
+                {
+                    "label": "Counselling",
+                    "concept": "counselling"
+                },
+                {
+                    "label": "Psychotherapy",
+                    "concept": "psychotherapy"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "reasonForMissedAppointment",
+        "question_label": "Reason for missed appointment",
+        "questionOptions": {
+            "concept": "reasonForMissedAppointment",
+            "answers": [
+                {
+                    "label": "Patient forgot about session",
+                    "concept": "patientForgotAboutSession"
+                },
+                {
+                    "label": "No transportation / unable to attend",
+                    "concept": "noTransportationOrUnableToAttend"
+                },
+                {
+                    "label": "Patient unreachable",
+                    "concept": "patientUnreachable"
+                },
+                {
+                    "label": "Patient no longer wants services",
+                    "concept": "patientNoLongerWantsServices"
+                },
+                {
+                    "label": "Patient was busy",
+                    "concept": "patientWasBusy"
+                },
+                {
+                    "label": "Other",
+                    "concept": "reasonForMissedAppointmentOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "didYouHaveProblemsPerformingDailyActivitiesSuchAsCookingBathingOrChoresOutsideTheHousehold",
+        "question_label": "Did you have problems performing daily activities such as cooking bathing or chores outside the household",
+        "questionOptions": {
+            "concept": "didYouHaveProblemsPerformingDailyActivitiesSuchAsCookingBathingOrChoresOutsideTheHousehold",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "didYouHaveProblemsGettingAlongWithFamilyOrFriends",
+        "question_label": "Did you have problems getting along with family or friends",
+        "questionOptions": {
+            "concept": "didYouHaveProblemsGettingAlongWithFamilyOrFriends",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "didYouHaveAnyProblemsSleepingSuchAsSleepingTooMuchOrNotEnough",
+        "question_label": "Did you have any problems sleeping such as sleeping too much or not enough",
+        "questionOptions": {
+            "concept": "didYouHaveAnyProblemsSleepingSuchAsSleepingTooMuchOrNotEnough",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "haveYouBeenBotheredByUnpleasantThoughtsWorriesOrIdeas",
+        "question_label": "Have you been bothered by unpleasant thoughts worries or ideas",
+        "questionOptions": {
+            "concept": "haveYouBeenBotheredByUnpleasantThoughtsWorriesOrIdeas",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "haveYouFeltSadOrNervous",
+        "question_label": "Have you felt sad or nervous",
+        "questionOptions": {
+            "concept": "haveYouFeltSadOrNervous",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "haveYouBeenSuffering",
+        "question_label": "Have you been suffering",
+        "questionOptions": {
+            "concept": "haveYouBeenSuffering",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "A little",
+                    "concept": "aLittle"
+                },
+                {
+                    "label": "Some",
+                    "concept": "some"
+                },
+                {
+                    "label": "Fair amount",
+                    "concept": "fairAmount"
+                },
+                {
+                    "label": "A lot",
+                    "concept": "aLot"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "littleInterestOrPleasureInDoingThings",
+        "question_label": "Little interest or pleasure in doing things",
+        "questionOptions": {
+            "concept": "littleInterestOrPleasureInDoingThings",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingDownDepressedOrHopeless",
+        "question_label": "Feeling down depressed or hopeless",
+        "questionOptions": {
+            "concept": "feelingDownDepressedOrHopeless",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+        "question_label": "Trouble falling or staying asleep or sleeping too much",
+        "questionOptions": {
+            "concept": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingTiredOrHavingLittleEnergy",
+        "question_label": "Feeling tired or having little energy",
+        "questionOptions": {
+            "concept": "feelingTiredOrHavingLittleEnergy",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "poorAppetiteOrOvereating",
+        "question_label": "Poor appetite or overeating",
+        "questionOptions": {
+            "concept": "poorAppetiteOrOvereating",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+        "question_label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+        "questionOptions": {
+            "concept": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+        "question_label": "Trouble concentrating on things such as reading the newspaper or watching television",
+        "questionOptions": {
+            "concept": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+        "question_label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+        "questionOptions": {
+            "concept": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+        "question_label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+        "questionOptions": {
+            "concept": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiS",
+        "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
+        "questionOptions": {
+            "concept": "cgiS",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Normal/not ill",
+                    "concept": "normalOrNotIll"
+                },
+                {
+                    "label": "- Suspected mentally ill",
+                    "concept": "suspectedMentallyIll"
+                },
+                {
+                    "label": "- Mildly ill",
+                    "concept": "mildlyIll"
+                },
+                {
+                    "label": "- Moderately ill",
+                    "concept": "moderatelyIll"
+                },
+                {
+                    "label": "- Markedly ill",
+                    "concept": "markedlyIll"
+                },
+                {
+                    "label": "- Severely ill",
+                    "concept": "severelyIll"
+                },
+                {
+                    "label": "- Extremely ill patient",
+                    "concept": "extremelyIllPatient"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiI",
+        "question_label": "CGI-I (rating of  improvement CGI-I how much has the patient improved at this time)",
+        "questionOptions": {
+            "concept": "cgiI",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Very much improved",
+                    "concept": "veryMuchImproved"
+                },
+                {
+                    "label": "- Much improved",
+                    "concept": "muchImproved"
+                },
+                {
+                    "label": "- Minimally improved",
+                    "concept": "minimallyImproved"
+                },
+                {
+                    "label": "- No change",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "- Minimally worse",
+                    "concept": "minimallyWorse"
+                },
+                {
+                    "label": "- Much worse",
+                    "concept": "muchWorse"
+                },
+                {
+                    "label": "- Very much worse",
+                    "concept": "veryMuchWorse"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "clinicalDiagnosis",
+        "question_label": "Clinical diagnosis (only to be established by a psychologist)",
+        "questionOptions": {
+            "concept": "clinicalDiagnosis",
+            "answers": [
+                {
+                    "label": "Acute stress reaction",
+                    "concept": "acuteStressReaction"
+                },
+                {
+                    "label": "Bereavement/grief",
+                    "concept": "bereavementOrGrief"
+                },
+                {
+                    "label": "Post-Traumatic Stress Disorder",
+                    "concept": "postTraumaticStressDisorder"
+                },
+                {
+                    "label": "Conversion/Dissociative reaction",
+                    "concept": "conversionOrDissociativeReaction"
+                },
+                {
+                    "label": "Anxiety Disorder",
+                    "concept": "anxietyDisorder"
+                },
+                {
+                    "label": "Medically Unexplained Physical Symptoms (MUPS)",
+                    "concept": "medicallyUnexplainedPhysicalSymptoms"
+                },
+                {
+                    "label": "Depression",
+                    "concept": "depression"
+                },
+                {
+                    "label": "Self-harming behavior/suicide attempt",
+                    "concept": "selfHarmingBehaviorOrSuicideAttempt"
+                },
+                {
+                    "label": "Acute psychosis (incl. post-partum psychosis)",
+                    "concept": "acutePsychosis"
+                },
+                {
+                    "label": "Chronic psychosis (incl. schizophrenia)",
+                    "concept": "chronicPsychosis"
+                },
+                {
+                    "label": "Bipolar disorder (incl. mania)",
+                    "concept": "bipolarDisorder"
+                },
+                {
+                    "label": "Enuresis / Encopresis",
+                    "concept": "enuresisOrEncopresis"
+                },
+                {
+                    "label": "Developmental disorder (incl. intellectual disability autism)",
+                    "concept": "developmentalDisorder"
+                },
+                {
+                    "label": "Childhood behavioral disorder (incl. ADHD conduct disorder)",
+                    "concept": "childhoodBehavioralDisorder"
+                },
+                {
+                    "label": "Childhood emotional disorder",
+                    "concept": "childhoodEmotionalDisorder"
+                },
+                {
+                    "label": "Substance-related disorder",
+                    "concept": "substanceRelatedDisorder"
+                },
+                {
+                    "label": "Epilepsy / seizures",
+                    "concept": "epilepsyOrSeizures"
+                },
+                {
+                    "label": "Other disorder",
+                    "concept": "otherDisorder"
+                },
+                {
+                    "label": "No diagnosis",
+                    "concept": "noDiagnosis"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "prescribedBy",
+        "question_label": "Prescribed by",
+        "questionOptions": {
+            "concept": "prescribedBy",
+            "answers": [
+                {
+                    "label": "MSF",
+                    "concept": "msf"
+                },
+                {
+                    "label": "Non MSF",
+                    "concept": "nonMsf"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "whatTypeOfViolence",
+        "question_label": "What type(s) of violence",
+        "questionOptions": {
+            "concept": "whatTypeOfViolence",
+            "answers": [
+                {
+                    "label": "Sexual",
+                    "concept": "sexual"
+                },
+                {
+                    "label": "Physical",
+                    "concept": "physical"
+                },
+                {
+                    "label": "Verbal",
+                    "concept": "verbal"
+                },
+                {
+                    "label": "Psychological",
+                    "concept": "psychological"
+                },
+                {
+                    "label": "Other",
+                    "concept": "whatTypeOfViolenceOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "timeBetweenViolenceEventAndConsultation",
+        "question_label": "Time between violence event and consultation",
+        "questionOptions": {
+            "concept": "timeBetweenViolenceEventAndConsultation",
+            "answers": [
+                {
+                    "label": "Less than 1 month",
+                    "concept": "lessThan1Month"
+                },
+                {
+                    "label": "Less than 1 year",
+                    "concept": "lessThan1Year"
+                },
+                {
+                    "label": "> 1 year",
+                    "concept": "moreThan1Year"
+                },
+                {
+                    "label": "Unknown",
+                    "concept": "unknown"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "typeOfReferral",
+        "question_label": "Type of referral",
+        "questionOptions": {
+            "concept": "typeOfReferral",
+            "answers": [
+                {
+                    "label": "Medical care (MSF MoH NGO)",
+                    "concept": "medicalCare"
+                },
+                {
+                    "label": "MSF psychiatric services",
+                    "concept": "msfPsychiatricServices"
+                },
+                {
+                    "label": "Non-MSF psychiatrist services",
+                    "concept": "nonMsfPsychiatristServices"
+                },
+                {
+                    "label": "Social services",
+                    "concept": "socialServices"
+                },
+                {
+                    "label": "Legal services",
+                    "concept": "legalServices"
+                },
+                {
+                    "label": "Protection services",
+                    "concept": "protectionServices"
+                },
+                {
+                    "label": "Hospitalisation",
+                    "concept": "hospitalisation"
+                },
+                {
+                    "label": "CHW",
+                    "concept": "chw"
+                },
+                {
+                    "label": "Other",
+                    "concept": "typeOfReferralOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "admissionType",
+        "question_label": "Admission type",
+        "questionOptions": {
+            "concept": "admissionType",
+            "answers": [
+                {
+                    "label": "New admission",
+                    "concept": "newAdmission"
+                },
+                {
+                    "label": "Readmission",
+                    "concept": "readmission"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "consultationDoneBy",
+        "question_label": "Consultation done by",
+        "questionOptions": {
+            "concept": "consultationDoneBy",
+            "answers": [
+                {
+                    "label": "Psychiatrist",
+                    "concept": "psychiatrist"
+                },
+                {
+                    "label": "mhGAP clinician",
+                    "concept": "mhgapClinician"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "clinicalDiagnosis",
+        "question_label": "Clinical diagnosis (only to be established by mhGAP clinician)",
+        "questionOptions": {
+            "concept": "clinicalDiagnosis",
+            "answers": [
+                {
+                    "label": "Acute stress reaction",
+                    "concept": "acuteStressReaction"
+                },
+                {
+                    "label": "Bereavement/grief",
+                    "concept": "bereavementOrGrief"
+                },
+                {
+                    "label": "Post-Traumatic Stress Disorder",
+                    "concept": "postTraumaticStressDisorder"
+                },
+                {
+                    "label": "Conversion/Dissociative reaction",
+                    "concept": "conversionOrDissociativeReaction"
+                },
+                {
+                    "label": "Anxiety Disorder",
+                    "concept": "anxietyDisorder"
+                },
+                {
+                    "label": "Medically Unexplained Physical Symptoms (MUPS)",
+                    "concept": "medicallyUnexplainedPhysicalSymptoms"
+                },
+                {
+                    "label": "Depression",
+                    "concept": "depression"
+                },
+                {
+                    "label": "Self-harming behavior/suicide attempt",
+                    "concept": "selfHarmingBehaviorOrSuicideAttempt"
+                },
+                {
+                    "label": "Acute psychosis (incl. post-partum psychosis)",
+                    "concept": "acutePsychosis"
+                },
+                {
+                    "label": "Chronic psychosis (incl. schizophrenia)",
+                    "concept": "chronicPsychosis"
+                },
+                {
+                    "label": "Bipolar disorder (incl. mania)",
+                    "concept": "bipolarDisorder"
+                },
+                {
+                    "label": "Enuresis / Encopresis",
+                    "concept": "enuresisOrEncopresis"
+                },
+                {
+                    "label": "Developmental disorder (incl. intellectual disability autism)",
+                    "concept": "developmentalDisorder"
+                },
+                {
+                    "label": "Childhood behavioral disorder (incl. ADHD conduct disorder)",
+                    "concept": "childhoodBehavioralDisorder"
+                },
+                {
+                    "label": "Childhood emotional disorder",
+                    "concept": "childhoodEmotionalDisorder"
+                },
+                {
+                    "label": "Substance-related disorder",
+                    "concept": "substanceRelatedDisorder"
+                },
+                {
+                    "label": "Epilepsy / seizures",
+                    "concept": "epilepsyOrSeizures"
+                },
+                {
+                    "label": "Other disorder",
+                    "concept": "otherDisorder"
+                },
+                {
+                    "label": "No diagnosis",
+                    "concept": "noDiagnosis"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "littleInterestOrPleasureInDoingThings",
+        "question_label": "Little interest or pleasure in doing things",
+        "questionOptions": {
+            "concept": "littleInterestOrPleasureInDoingThings",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingDownDepressedOrHopeless",
+        "question_label": "Feeling down depressed or hopeless",
+        "questionOptions": {
+            "concept": "feelingDownDepressedOrHopeless",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+        "question_label": "Trouble falling or staying asleep or sleeping too much",
+        "questionOptions": {
+            "concept": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingTiredOrHavingLittleEnergy",
+        "question_label": "Feeling tired or having little energy",
+        "questionOptions": {
+            "concept": "feelingTiredOrHavingLittleEnergy",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "poorAppetiteOrOvereating",
+        "question_label": "Poor appetite or overeating",
+        "questionOptions": {
+            "concept": "poorAppetiteOrOvereating",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+        "question_label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+        "questionOptions": {
+            "concept": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+        "question_label": "Trouble concentrating on things such as reading the newspaper or watching television",
+        "questionOptions": {
+            "concept": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+        "question_label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+        "questionOptions": {
+            "concept": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+        "question_label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+        "questionOptions": {
+            "concept": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiS",
+        "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
+        "questionOptions": {
+            "concept": "cgiS",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Normal/not ill",
+                    "concept": "normalOrNotIll"
+                },
+                {
+                    "label": "- Suspected mentally ill",
+                    "concept": "suspectedMentallyIll"
+                },
+                {
+                    "label": "- Mildly ill",
+                    "concept": "mildlyIll"
+                },
+                {
+                    "label": "- Moderately ill",
+                    "concept": "moderatelyIll"
+                },
+                {
+                    "label": "- Markedly ill",
+                    "concept": "markedlyIll"
+                },
+                {
+                    "label": "- Severely ill",
+                    "concept": "severelyIll"
+                },
+                {
+                    "label": "- Extremely ill patient",
+                    "concept": "extremelyIllPatient"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication1Name",
+        "question_label": "Medication 1 - Name",
+        "questionOptions": {
+            "concept": "medication1Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication1NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication2Name",
+        "question_label": "Medication 2 - Name",
+        "questionOptions": {
+            "concept": "medication2Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication2NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication3Name",
+        "question_label": "Medication 3 - Name",
+        "questionOptions": {
+            "concept": "medication3Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication3NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "reasonForMissedAppointment",
+        "question_label": "Reason for missed appointment",
+        "questionOptions": {
+            "concept": "reasonForMissedAppointment",
+            "answers": [
+                {
+                    "label": "Patient forgot about session",
+                    "concept": "patientForgotAboutSession"
+                },
+                {
+                    "label": "No transportation / unable to attend",
+                    "concept": "noTransportationOrUnableToAttend"
+                },
+                {
+                    "label": "Patient unreachable",
+                    "concept": "patientUnreachable"
+                },
+                {
+                    "label": "Patient no longer wants services",
+                    "concept": "patientNoLongerWantsServices"
+                },
+                {
+                    "label": "Patient was busy",
+                    "concept": "patientWasBusy"
+                },
+                {
+                    "label": "Other",
+                    "concept": "reasonForMissedAppointmentOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "clinicalDiagnosis",
+        "question_label": "Clinical diagnosis (only to be established by mhGAP clinician)",
+        "questionOptions": {
+            "concept": "clinicalDiagnosis",
+            "answers": [
+                {
+                    "label": "Acute stress reaction",
+                    "concept": "acuteStressReaction"
+                },
+                {
+                    "label": "Bereavement/grief",
+                    "concept": "bereavementOrGrief"
+                },
+                {
+                    "label": "Post-Traumatic Stress Disorder",
+                    "concept": "postTraumaticStressDisorder"
+                },
+                {
+                    "label": "Conversion/Dissociative reaction",
+                    "concept": "conversionOrDissociativeReaction"
+                },
+                {
+                    "label": "Anxiety Disorder",
+                    "concept": "anxietyDisorder"
+                },
+                {
+                    "label": "Medically Unexplained Physical Symptoms (MUPS)",
+                    "concept": "medicallyUnexplainedPhysicalSymptoms"
+                },
+                {
+                    "label": "Depression",
+                    "concept": "depression"
+                },
+                {
+                    "label": "Self-harming behavior/suicide attempt",
+                    "concept": "selfHarmingBehaviorOrSuicideAttempt"
+                },
+                {
+                    "label": "Acute psychosis (incl. post-partum psychosis)",
+                    "concept": "acutePsychosis"
+                },
+                {
+                    "label": "Chronic psychosis (incl. schizophrenia)",
+                    "concept": "chronicPsychosis"
+                },
+                {
+                    "label": "Bipolar disorder (incl. mania)",
+                    "concept": "bipolarDisorder"
+                },
+                {
+                    "label": "Enuresis / Encopresis",
+                    "concept": "enuresisOrEncopresis"
+                },
+                {
+                    "label": "Developmental disorder (incl. intellectual disability autism)",
+                    "concept": "developmentalDisorder"
+                },
+                {
+                    "label": "Childhood behavioral disorder (incl. ADHD conduct disorder)",
+                    "concept": "childhoodBehavioralDisorder"
+                },
+                {
+                    "label": "Childhood emotional disorder",
+                    "concept": "childhoodEmotionalDisorder"
+                },
+                {
+                    "label": "Substance-related disorder",
+                    "concept": "substanceRelatedDisorder"
+                },
+                {
+                    "label": "Epilepsy / seizures",
+                    "concept": "epilepsyOrSeizures"
+                },
+                {
+                    "label": "Other disorder",
+                    "concept": "otherDisorder"
+                },
+                {
+                    "label": "No diagnosis",
+                    "concept": "noDiagnosis"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "littleInterestOrPleasureInDoingThings",
+        "question_label": "Little interest or pleasure in doing things",
+        "questionOptions": {
+            "concept": "littleInterestOrPleasureInDoingThings",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingDownDepressedOrHopeless",
+        "question_label": "Feeling down depressed or hopeless",
+        "questionOptions": {
+            "concept": "feelingDownDepressedOrHopeless",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+        "question_label": "Trouble falling or staying asleep or sleeping too much",
+        "questionOptions": {
+            "concept": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingTiredOrHavingLittleEnergy",
+        "question_label": "Feeling tired or having little energy",
+        "questionOptions": {
+            "concept": "feelingTiredOrHavingLittleEnergy",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "poorAppetiteOrOvereating",
+        "question_label": "Poor appetite or overeating",
+        "questionOptions": {
+            "concept": "poorAppetiteOrOvereating",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+        "question_label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+        "questionOptions": {
+            "concept": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+        "question_label": "Trouble concentrating on things such as reading the newspaper or watching television",
+        "questionOptions": {
+            "concept": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+        "question_label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+        "questionOptions": {
+            "concept": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+        "question_label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+        "questionOptions": {
+            "concept": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "notAtAll"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "severalDays"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "moreThanHalfTheDays"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiS",
+        "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
+        "questionOptions": {
+            "concept": "cgiS",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Normal/not ill",
+                    "concept": "normalOrNotIll"
+                },
+                {
+                    "label": "- Suspected mentally ill",
+                    "concept": "suspectedMentallyIll"
+                },
+                {
+                    "label": "- Mildly ill",
+                    "concept": "mildlyIll"
+                },
+                {
+                    "label": "- Moderately ill",
+                    "concept": "moderatelyIll"
+                },
+                {
+                    "label": "- Markedly ill",
+                    "concept": "markedlyIll"
+                },
+                {
+                    "label": "- Severely ill",
+                    "concept": "severelyIll"
+                },
+                {
+                    "label": "- Extremely ill patient",
+                    "concept": "extremelyIllPatient"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiI",
+        "question_label": "CGI-I (rating of  improvement CGI-I how much has the patient improved at this time)",
+        "questionOptions": {
+            "concept": "cgiI",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Very much improved",
+                    "concept": "veryMuchImproved"
+                },
+                {
+                    "label": "- Much improved",
+                    "concept": "muchImproved"
+                },
+                {
+                    "label": "- Minimally improved",
+                    "concept": "minimallyImproved"
+                },
+                {
+                    "label": "- No change",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "- Minimally worse",
+                    "concept": "minimallyWorse"
+                },
+                {
+                    "label": "- Much worse",
+                    "concept": "muchWorse"
+                },
+                {
+                    "label": "- Very much worse",
+                    "concept": "veryMuchWorse"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication1Name",
+        "question_label": "Medication 1 - Name",
+        "questionOptions": {
+            "concept": "medication1Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication1NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication2Name",
+        "question_label": "Medication 2 - Name",
+        "questionOptions": {
+            "concept": "medication2Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication2NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "medication3Name",
+        "question_label": "Medication 3 - Name",
+        "questionOptions": {
+            "concept": "medication3Name",
+            "answers": [
+                {
+                    "label": "nan",
+                    "concept": "nan"
+                },
+                {
+                    "label": "Amitriptyline tab",
+                    "concept": "amitriptylineTab"
+                },
+                {
+                    "label": "Biperiden tab",
+                    "concept": "biperidenTab"
+                },
+                {
+                    "label": "Carbamazepine tab",
+                    "concept": "carbamazepineTab"
+                },
+                {
+                    "label": "Chlorpromazine tab",
+                    "concept": "chlorpromazineTab"
+                },
+                {
+                    "label": "Diazepam tab",
+                    "concept": "diazepamTab"
+                },
+                {
+                    "label": "Diphenhydramine tab",
+                    "concept": "diphenhydramineTab"
+                },
+                {
+                    "label": "Fluoxetine hydrochloride capsule",
+                    "concept": "fluoxetineHydrochlorideCapsule"
+                },
+                {
+                    "label": "Fluphenazine decanoate amp",
+                    "concept": "fluphenazineDecanoateAmp"
+                },
+                {
+                    "label": "Haloperidol tab",
+                    "concept": "haloperidolTab"
+                },
+                {
+                    "label": "Haloperidol decanoate amp",
+                    "concept": "haloperidolDecanoateAmp"
+                },
+                {
+                    "label": "Hydroxyzine dihydrochloride tab",
+                    "concept": "hydroxyzineDihydrochlorideTab"
+                },
+                {
+                    "label": "Olanzapine tab",
+                    "concept": "olanzapineTab"
+                },
+                {
+                    "label": "Paroxetine tab",
+                    "concept": "paroxetineTab"
+                },
+                {
+                    "label": "Promethazine hydrochloride tab",
+                    "concept": "promethazineHydrochlorideTab"
+                },
+                {
+                    "label": "Risperidone tab",
+                    "concept": "risperidoneTab"
+                },
+                {
+                    "label": "Sertraline tab",
+                    "concept": "sertralineTab"
+                },
+                {
+                    "label": "Trihexyphenidyl hydrochloride tab",
+                    "concept": "trihexyphenidylHydrochlorideTab"
+                },
+                {
+                    "label": "Valproate sodium tab",
+                    "concept": "valproateSodiumTab"
+                },
+                {
+                    "label": "Other",
+                    "concept": "medication3NameOther"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "mainTypeOfIntervention",
+        "question_label": "Main type of intervention",
+        "questionOptions": {
+            "concept": "mainTypeOfIntervention",
+            "answers": [
+                {
+                    "label": "Counselling",
+                    "concept": "counselling"
+                },
+                {
+                    "label": "Psychotherapy",
+                    "concept": "psychotherapy"
+                },
+                {
+                    "label": "Psychiatry/mhGAP",
+                    "concept": "psychiatryOrMhgap"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "mainTypeOfConsultation",
+        "question_label": "Main type of consultation",
+        "questionOptions": {
+            "concept": "mainTypeOfConsultation",
+            "answers": [
+                {
+                    "label": "Individual",
+                    "concept": "individual"
+                },
+                {
+                    "label": "Couple",
+                    "concept": "couple"
+                },
+                {
+                    "label": "Family",
+                    "concept": "family"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "typeOfClosure",
+        "question_label": "Type of closure",
+        "questionOptions": {
+            "concept": "typeOfClosure",
+            "answers": [
+                {
+                    "label": "Discharge with the patients agreement end of care",
+                    "concept": "dischargeWithThePatientsAgreementEndOfCare"
+                },
+                {
+                    "label": "Discharge with the patients agreement single consultation",
+                    "concept": "dischargeWithThePatientsAgreementSingleConsultation"
+                },
+                {
+                    "label": "Discharge with the patients agreement patient moved",
+                    "concept": "dischargeWithThePatientsAgreementPatientMoved"
+                },
+                {
+                    "label": "Discharge with the patients agreement patient referred",
+                    "concept": "dischargeWithThePatientsAgreementPatientReferred"
+                },
+                {
+                    "label": "Patient cannot access the service MSF is no longer",
+                    "concept": "patientCannotAccessTheServiceMsfIsNoLonger"
+                },
+                {
+                    "label": "Patient cannot access the service transport issues",
+                    "concept": "patientCannotAccessTheServiceTransportIssues"
+                },
+                {
+                    "label": "Patient cannot access the service arrested/kidnaped",
+                    "concept": "patientCannotAccessTheServiceArrestedOrKidnaped"
+                },
+                {
+                    "label": "Lost to follow up unable to trace",
+                    "concept": "lostToFollowUpUnableToTrace"
+                },
+                {
+                    "label": "Lost to follow up dissatisfied/different expectations",
+                    "concept": "lostToFollowUpDissatisfiedOrDifferentExpectations"
+                },
+                {
+                    "label": "Deceased/missing",
+                    "concept": "deceasedOrMissing"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "goal1",
+        "question_label": "Goal 1",
+        "questionOptions": {
+            "concept": "goal1",
+            "answers": [
+                {
+                    "label": "Achieved",
+                    "concept": "achieved"
+                },
+                {
+                    "label": "No change ",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "Challenges",
+                    "concept": "challenges"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "goal2",
+        "question_label": "Goal 2",
+        "questionOptions": {
+            "concept": "goal2",
+            "answers": [
+                {
+                    "label": "Achieved",
+                    "concept": "achieved"
+                },
+                {
+                    "label": "No change ",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "Challenges",
+                    "concept": "challenges"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "goal3",
+        "question_label": "Goal 3",
+        "questionOptions": {
+            "concept": "goal3",
+            "answers": [
+                {
+                    "label": "Achieved",
+                    "concept": "achieved"
+                },
+                {
+                    "label": "No change ",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "Challenges",
+                    "concept": "challenges"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiI",
+        "question_label": "CGI-I",
+        "questionOptions": {
+            "concept": "cgiI",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Normal/not ill",
+                    "concept": "normalOrNotIll"
+                },
+                {
+                    "label": "- Suspected mentally ill",
+                    "concept": "suspectedMentallyIll"
+                },
+                {
+                    "label": "- Mildly ill",
+                    "concept": "mildlyIll"
+                },
+                {
+                    "label": "- Moderately ill",
+                    "concept": "moderatelyIll"
+                },
+                {
+                    "label": "- Markedly ill",
+                    "concept": "markedlyIll"
+                },
+                {
+                    "label": "- Severely ill",
+                    "concept": "severelyIll"
+                },
+                {
+                    "label": "- Extremely ill patient",
+                    "concept": "extremelyIllPatient"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "cgiS",
+        "question_label": "CGI-S",
+        "questionOptions": {
+            "concept": "cgiS",
+            "answers": [
+                {
+                    "label": "- Not assessed",
+                    "concept": "notAssessed"
+                },
+                {
+                    "label": "- Very much improved",
+                    "concept": "veryMuchImproved"
+                },
+                {
+                    "label": "- Much improved",
+                    "concept": "muchImproved"
+                },
+                {
+                    "label": "- Minimally improved",
+                    "concept": "minimallyImproved"
+                },
+                {
+                    "label": "- No change",
+                    "concept": "noChange"
+                },
+                {
+                    "label": "- Minimally worse",
+                    "concept": "minimallyWorse"
+                },
+                {
+                    "label": "- Much worse",
+                    "concept": "muchWorse"
+                },
+                {
+                    "label": "- Very much worse",
+                    "concept": "veryMuchWorse"
+                }
+            ]
+        }
     }
 ]
