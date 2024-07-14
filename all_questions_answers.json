@@ -20,7 +20,7 @@
         "question_id": "typeOfConsultation",
         "question_label": "Type of consultation",
         "questionOptions": {
-            "concept": "MSF-AAAAAA000000000000001714",
+            "concept": "typeOfConsultation",
             "answers": [
                 {
                     "label": "Individual",
@@ -62,7 +62,7 @@
         "question_id": "locationOfIntervention",
         "question_label": "Location of intervention",
         "questionOptions": {
-            "concept": "MSF-AAAAAA000000000000001697",
+            "concept": "locationOfIntervention",
             "answers": [
                 {
                     "label": "Health facility",
@@ -1158,23 +1158,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1187,23 +1187,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1216,23 +1216,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1245,23 +1245,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1274,23 +1274,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1303,23 +1303,23 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "160215AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "A little",
-                    "concept": "f6a5ea2d-fc7d-4e9e-8dfd-dbbea05cd9a0"
+                    "concept": "aLittle"
                 },
                 {
                     "label": "Some",
-                    "concept": "164493AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "some"
                 },
                 {
                     "label": "Fair amount",
-                    "concept": "de7fa192-bf2e-4991-a81f-582c4b50ae51"
+                    "concept": "fairAmount"
                 },
                 {
                     "label": "A lot",
-                    "concept": "0f074510-1ff6-4924-bfef-effdcffd44f8"
+                    "concept": "aLot"
                 }
             ]
         }
@@ -1332,19 +1332,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1357,19 +1357,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1382,19 +1382,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1407,19 +1407,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1432,19 +1432,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1457,19 +1457,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1482,19 +1482,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1507,19 +1507,19 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
                 }
             ]
         }
@@ -1532,19 +1532,48 @@
             "answers": [
                 {
                     "label": "Not at all",
-                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "notAtAll"
                 },
                 {
                     "label": "Several days",
-                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "severalDays"
                 },
                 {
                     "label": "More than half the days",
-                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "moreThanHalfTheDays"
                 },
                 {
                     "label": "Nearly every day",
-                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    "concept": "nearlyEveryDay"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "depressionSeverityScale",
+        "question_label": "Depression severity scale",
+        "questionOptions": {
+            "concept": "depressionSeverityScale",
+            "answers": [
+                {
+                    "label": "No depression",
+                    "concept": "noDepression"
+                },
+                {
+                    "label": "Minimal symptoms",
+                    "concept": "minimalSymptoms"
+                },
+                {
+                    "label": "Minor to mild depression (or dysthymia)",
+                    "concept": "minorToMildDepression"
+                },
+                {
+                    "label": "Major depression",
+                    "concept": "majorDepression"
+                },
+                {
+                    "label": "Severe depression",
+                    "concept": "severeDepression"
                 }
             ]
         }
@@ -1592,70 +1621,34 @@
     },
     {
         "question_id": "positiveFunctionalityIsThePatientCapableOfBeingIndependentCaringForThemselvesGoingToWorkOrSchoolEtc",
-        "question_label": "Positive Functionality Is the patient capable of being independent caring for themselves (bathing/eating) going to work/school etc.",
+        "question_label": "Positive functionality Is the patient capable of being independent caring for themselves (bathing/eating) going to work/school etc.",
         "questionOptions": {
             "concept": "positiveFunctionalityIsThePatientCapableOfBeingIndependentCaringForThemselvesGoingToWorkOrSchoolEtc",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
         "question_id": "internalResourcesDoesThePatientBelieveThatTheyHaveTheAbilitiesNeededToOvercomeTheCurrentProblemOrDoTheyHaveHopeForTheirFuture",
-        "question_label": "Internal Resources Does the patient believe that they have the abilities needed to overcome the current problem / do they have hope for their future",
+        "question_label": "Internal resources Does the patient believe that they have the abilities needed to overcome the current problem / do they have hope for their future",
         "questionOptions": {
             "concept": "internalResourcesDoesThePatientBelieveThatTheyHaveTheAbilitiesNeededToOvercomeTheCurrentProblemOrDoTheyHaveHopeForTheirFuture",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
         "question_id": "externalResourcesDoesThePatientBelieveThatTheyHaveSomeoneWhoTheyCanRelyOnForHelpInTheirLives",
-        "question_label": "External Resources Does the patient believe that they have someone who they can rely on for help in their lives",
+        "question_label": "External resources Does the patient believe that they have someone who they can rely on for help in their lives",
         "questionOptions": {
             "concept": "externalResourcesDoesThePatientBelieveThatTheyHaveSomeoneWhoTheyCanRelyOnForHelpInTheirLives",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
         "question_id": "spiritualOrMoralResourcesAreThePatientsBeliefsASourceOfStrengthForThemWhenDealingWithProblems",
-        "question_label": "Spiritual / Moral Resources Are the patients beliefs a source of strength for them when dealing with problems",
+        "question_label": "Spiritual / moral resources Are the patients beliefs a source of strength for them when dealing with problems",
         "questionOptions": {
             "concept": "spiritualOrMoralResourcesAreThePatientsBeliefsASourceOfStrengthForThemWhenDealingWithProblems",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1663,16 +1656,7 @@
         "question_label": "Has the patient had thoughts of death or suicide",
         "questionOptions": {
             "concept": "hasThePatientHadThoughtsOfDeathOrSuicide",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1680,16 +1664,7 @@
         "question_label": "Has the patient hurt themselves / caused self-harm",
         "questionOptions": {
             "concept": "hasThePatientHurtThemselvesOrCausedSelfHarm",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1697,16 +1672,7 @@
         "question_label": "Has the patient attempted suicide or tried to kill themselves",
         "questionOptions": {
             "concept": "hasThePatientAttemptedSuicideOrTriedToKillThemselves",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1714,16 +1680,7 @@
         "question_label": "Is the patient currently at risk of hurting himself/herself or attempting suicide",
         "questionOptions": {
             "concept": "isThePatientCurrentlyAtRiskOfHurtingHimselfOrHerselfOrAttemptingSuicide",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1731,16 +1688,7 @@
         "question_label": "Is the patient currently at risk of hurting others",
         "questionOptions": {
             "concept": "isThePatientCurrentlyAtRiskOfHurtingOthers",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1748,16 +1696,7 @@
         "question_label": "Does the patient regularly use alcohol / substances to become intoxicated",
         "questionOptions": {
             "concept": "doesThePatientRegularlyUseAlcoholOrSubstancesToBecomeIntoxicated",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1765,16 +1704,7 @@
         "question_label": "Is the patient currently on psychotropic / psychiatric medication",
         "questionOptions": {
             "concept": "isThePatientCurrentlyOnPsychotropicOrPsychiatricMedication",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1799,16 +1729,7 @@
         "question_label": "Has the patient experienced an act of aggression or violence",
         "questionOptions": {
             "concept": "hasThePatientExperiencedAnActOfAggressionOrViolence",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -1847,6 +1768,14 @@
             "concept": "timeBetweenViolenceEventAndConsultation",
             "answers": [
                 {
+                    "label": "< 24 hrs",
+                    "concept": "lessThan24Hrs"
+                },
+                {
+                    "label": "-72hrs",
+                    "concept": "72hrs"
+                },
+                {
                     "label": "Less than 1 month",
                     "concept": "lessThan1Month"
                 },
@@ -1870,16 +1799,7 @@
         "question_label": "If yes would the patient like a referral to the medical department for treatment (or midwife/maternity for sexual violence)",
         "questionOptions": {
             "concept": "ifYesWouldThePatientLikeAReferralToTheMedicalDepartmentForTreatment",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -2612,16 +2532,7 @@
         "question_label": "Follow up session required (If no fill the Exit form)",
         "questionOptions": {
             "concept": "followUpSessionRequired",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -2629,16 +2540,7 @@
         "question_label": "Referral done",
         "questionOptions": {
             "concept": "referralDone",
-            "answers": [
-                {
-                    "label": "Yes",
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                },
-                {
-                    "label": "No",
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                }
-            ]
+            "answers": []
         }
     },
     {
@@ -3215,6 +3117,35 @@
         }
     },
     {
+        "question_id": "depressionSeverityScale",
+        "question_label": "Depression severity scale",
+        "questionOptions": {
+            "concept": "depressionSeverityScale",
+            "answers": [
+                {
+                    "label": "No depression",
+                    "concept": "noDepression"
+                },
+                {
+                    "label": "Minimal symptoms",
+                    "concept": "minimalSymptoms"
+                },
+                {
+                    "label": "Minor to mild depression (or dysthymia)",
+                    "concept": "minorToMildDepression"
+                },
+                {
+                    "label": "Major depression",
+                    "concept": "majorDepression"
+                },
+                {
+                    "label": "Severe depression",
+                    "concept": "severeDepression"
+                }
+            ]
+        }
+    },
+    {
         "question_id": "cgiS",
         "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
         "questionOptions": {
@@ -3434,6 +3365,14 @@
             "concept": "timeBetweenViolenceEventAndConsultation",
             "answers": [
                 {
+                    "label": "< 24 hrs",
+                    "concept": "lessThan24Hrs"
+                },
+                {
+                    "label": "-72hrs",
+                    "concept": "72hrs"
+                },
+                {
                     "label": "Less than 1 month",
                     "concept": "lessThan1Month"
                 },
@@ -3510,23 +3449,6 @@
                 {
                     "label": "Readmission",
                     "concept": "readmission"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "consultationDoneBy",
-        "question_label": "Consultation done by",
-        "questionOptions": {
-            "concept": "consultationDoneBy",
-            "answers": [
-                {
-                    "label": "Psychiatrist",
-                    "concept": "psychiatrist"
-                },
-                {
-                    "label": "mhGAP clinician",
-                    "concept": "mhgapClinician"
                 }
             ]
         }
@@ -3842,6 +3764,35 @@
         }
     },
     {
+        "question_id": "depressionSeverityScale",
+        "question_label": "Depression severity scale",
+        "questionOptions": {
+            "concept": "depressionSeverityScale",
+            "answers": [
+                {
+                    "label": "No depression",
+                    "concept": "noDepression"
+                },
+                {
+                    "label": "Minimal symptoms",
+                    "concept": "minimalSymptoms"
+                },
+                {
+                    "label": "Minor to mild depression (or dysthymia)",
+                    "concept": "minorToMildDepression"
+                },
+                {
+                    "label": "Major depression",
+                    "concept": "majorDepression"
+                },
+                {
+                    "label": "Severe depression",
+                    "concept": "severeDepression"
+                }
+            ]
+        }
+    },
+    {
         "question_id": "cgiS",
         "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
         "questionOptions": {
@@ -3878,273 +3829,6 @@
                 {
                     "label": "- Extremely ill patient",
                     "concept": "extremelyIllPatient"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "medication1Name",
-        "question_label": "Medication 1 - Name",
-        "questionOptions": {
-            "concept": "medication1Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication1NameOther"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "medication2Name",
-        "question_label": "Medication 2 - Name",
-        "questionOptions": {
-            "concept": "medication2Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication2NameOther"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "medication3Name",
-        "question_label": "Medication 3 - Name",
-        "questionOptions": {
-            "concept": "medication3Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication3NameOther"
                 }
             ]
         }
@@ -4493,6 +4177,35 @@
         }
     },
     {
+        "question_id": "depressionSeverityScale",
+        "question_label": "Depression severity scale",
+        "questionOptions": {
+            "concept": "depressionSeverityScale",
+            "answers": [
+                {
+                    "label": "No depression",
+                    "concept": "noDepression"
+                },
+                {
+                    "label": "Minimal symptoms",
+                    "concept": "minimalSymptoms"
+                },
+                {
+                    "label": "Minor to mild depression (or dysthymia)",
+                    "concept": "minorToMildDepression"
+                },
+                {
+                    "label": "Major depression",
+                    "concept": "majorDepression"
+                },
+                {
+                    "label": "Severe depression",
+                    "concept": "severeDepression"
+                }
+            ]
+        }
+    },
+    {
         "question_id": "cgiS",
         "question_label": "CGI-S (rating of severity CGI-S how mentally ill is the patient at this time)",
         "questionOptions": {
@@ -4575,273 +4288,6 @@
         }
     },
     {
-        "question_id": "medication1Name",
-        "question_label": "Medication 1 - Name",
-        "questionOptions": {
-            "concept": "medication1Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication1NameOther"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "medication2Name",
-        "question_label": "Medication 2 - Name",
-        "questionOptions": {
-            "concept": "medication2Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication2NameOther"
-                }
-            ]
-        }
-    },
-    {
-        "question_id": "medication3Name",
-        "question_label": "Medication 3 - Name",
-        "questionOptions": {
-            "concept": "medication3Name",
-            "answers": [
-                {
-                    "label": "nan",
-                    "concept": "nan"
-                },
-                {
-                    "label": "Amitriptyline tab",
-                    "concept": "amitriptylineTab"
-                },
-                {
-                    "label": "Biperiden tab",
-                    "concept": "biperidenTab"
-                },
-                {
-                    "label": "Carbamazepine tab",
-                    "concept": "carbamazepineTab"
-                },
-                {
-                    "label": "Chlorpromazine tab",
-                    "concept": "chlorpromazineTab"
-                },
-                {
-                    "label": "Diazepam tab",
-                    "concept": "diazepamTab"
-                },
-                {
-                    "label": "Diphenhydramine tab",
-                    "concept": "diphenhydramineTab"
-                },
-                {
-                    "label": "Fluoxetine hydrochloride capsule",
-                    "concept": "fluoxetineHydrochlorideCapsule"
-                },
-                {
-                    "label": "Fluphenazine decanoate amp",
-                    "concept": "fluphenazineDecanoateAmp"
-                },
-                {
-                    "label": "Haloperidol tab",
-                    "concept": "haloperidolTab"
-                },
-                {
-                    "label": "Haloperidol decanoate amp",
-                    "concept": "haloperidolDecanoateAmp"
-                },
-                {
-                    "label": "Hydroxyzine dihydrochloride tab",
-                    "concept": "hydroxyzineDihydrochlorideTab"
-                },
-                {
-                    "label": "Olanzapine tab",
-                    "concept": "olanzapineTab"
-                },
-                {
-                    "label": "Paroxetine tab",
-                    "concept": "paroxetineTab"
-                },
-                {
-                    "label": "Promethazine hydrochloride tab",
-                    "concept": "promethazineHydrochlorideTab"
-                },
-                {
-                    "label": "Risperidone tab",
-                    "concept": "risperidoneTab"
-                },
-                {
-                    "label": "Sertraline tab",
-                    "concept": "sertralineTab"
-                },
-                {
-                    "label": "Trihexyphenidyl hydrochloride tab",
-                    "concept": "trihexyphenidylHydrochlorideTab"
-                },
-                {
-                    "label": "Valproate sodium tab",
-                    "concept": "valproateSodiumTab"
-                },
-                {
-                    "label": "Other",
-                    "concept": "medication3NameOther"
-                }
-            ]
-        }
-    },
-    {
         "question_id": "mainTypeOfIntervention",
         "question_label": "Main type of intervention",
         "questionOptions": {
@@ -4854,10 +4300,6 @@
                 {
                     "label": "Psychotherapy",
                     "concept": "psychotherapy"
-                },
-                {
-                    "label": "Psychiatry/mhGAP",
-                    "concept": "psychiatryOrMhgap"
                 }
             ]
         }
@@ -5073,6 +4515,260 @@
                 {
                     "label": "- Very much worse",
                     "concept": "veryMuchWorse"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "littleInterestOrPleasureInDoingThings",
+        "question_label": "Little interest or pleasure in doing things",
+        "questionOptions": {
+            "concept": "85bdc2d2-afaa-4d5e-bc6b-ee8277d160f1",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingDownDepressedOrHopeless",
+        "question_label": "Feeling down depressed or hopeless",
+        "questionOptions": {
+            "concept": "01bf95d6-bcd0-44fb-8752-3da72f71ab6d",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+        "question_label": "Trouble falling or staying asleep or sleeping too much",
+        "questionOptions": {
+            "concept": "c85fc943-b747-4d72-a0a8-6ca2dc8fb568",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingTiredOrHavingLittleEnergy",
+        "question_label": "Feeling tired or having little energy",
+        "questionOptions": {
+            "concept": "8a034046-5fea-4253-a105-3af86b0679fe",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "poorAppetiteOrOvereating",
+        "question_label": "Poor appetite or overeating",
+        "questionOptions": {
+            "concept": "a34eb8de-4272-4da5-b785-6462dfb97cc2",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+        "question_label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+        "questionOptions": {
+            "concept": "4c8eaa85-2f5a-491b-9451-ca7a3239d3db",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+        "question_label": "Trouble concentrating on things such as reading the newspaper or watching television",
+        "questionOptions": {
+            "concept": "44bf9e5b-7caa-4b94-bb18-a4950abc701b",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+        "question_label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+        "questionOptions": {
+            "concept": "5e46d764-b706-4291-9e8e-b64fdc9630d6",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+        "question_label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+        "questionOptions": {
+            "concept": "51d7f1ac-b927-4caa-b044-ac6496ed455f",
+            "answers": [
+                {
+                    "label": "Not at all",
+                    "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Several days",
+                    "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "More than half the days",
+                    "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                },
+                {
+                    "label": "Nearly every day",
+                    "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+            ]
+        }
+    },
+    {
+        "question_id": "depressionSeverityScale",
+        "question_label": "Depression severity scale",
+        "questionOptions": {
+            "concept": "2066f043-2f21-4c19-8c04-77301d7404f9",
+            "answers": [
+                {
+                    "label": "No depression",
+                    "concept": "noDepression"
+                },
+                {
+                    "label": "Minimal symptoms",
+                    "concept": "minimalSymptoms"
+                },
+                {
+                    "label": "Minor to mild depression (or dysthymia)",
+                    "concept": "minorToMildDepression"
+                },
+                {
+                    "label": "Major depression",
+                    "concept": "majorDepression"
+                },
+                {
+                    "label": "Severe depression",
+                    "concept": "severeDepression"
                 }
             ]
         }

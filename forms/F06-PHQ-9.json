@@ -1,0 +1,343 @@
+{
+    "name": "F06-PHQ-9",
+    "description": "MSF Form - F06-PHQ-9",
+    "version": "1",
+    "published": true,
+    "uuid": "",
+    "processor": "EncounterFormProcessor",
+    "encounter": "Consultation",
+    "retired": false,
+    "referencedForms": [],
+    "pages": [
+        {
+            "label": "PHQ-9",
+            "sections": [
+                {
+                    "label": "PHQ-9 - Over the last two weeks, how often have you been bothered by any of the following problems?",
+                    "isExpanded": false,
+                    "questions": [
+                        {
+                            "id": "littleInterestOrPleasureInDoingThings",
+                            "label": "Little interest or pleasure in doing things",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "85bdc2d2-afaa-4d5e-bc6b-ee8277d160f1",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Little interest or pleasure in doing things"
+                        },
+                        {
+                            "id": "feelingDownDepressedOrHopeless",
+                            "label": "Feeling down depressed or hopeless",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "01bf95d6-bcd0-44fb-8752-3da72f71ab6d",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling down depressed or hopeless"
+                        },
+                        {
+                            "id": "troubleFallingOrStayingAsleepOrSleepingTooMuch",
+                            "label": "Trouble falling or staying asleep or sleeping too much",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c85fc943-b747-4d72-a0a8-6ca2dc8fb568",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Trouble falling or staying asleep or sleeping too much"
+                        },
+                        {
+                            "id": "feelingTiredOrHavingLittleEnergy",
+                            "label": "Feeling tired or having little energy",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "8a034046-5fea-4253-a105-3af86b0679fe",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling tired or having little energy"
+                        },
+                        {
+                            "id": "poorAppetiteOrOvereating",
+                            "label": "Poor appetite or overeating",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "a34eb8de-4272-4da5-b785-6462dfb97cc2",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Poor appetite or overeating"
+                        },
+                        {
+                            "id": "feelingBadAboutYourselfOrThatYouAreAFailureOrHaveLetYourselfOrYourFamilyDown",
+                            "label": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "4c8eaa85-2f5a-491b-9451-ca7a3239d3db",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Feeling bad about yourself - or that you are a failure or have let yourself or your family down"
+                        },
+                        {
+                            "id": "troubleConcentratingOnThingsSuchAsReadingTheNewspaperOrWatchingTelevision",
+                            "label": "Trouble concentrating on things such as reading the newspaper or watching television",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "44bf9e5b-7caa-4b94-bb18-a4950abc701b",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Trouble concentrating on things such as reading the newspaper or watching television"
+                        },
+                        {
+                            "id": "movingOrSpeakingSoSlowlyThatOtherPeopleCouldHaveNoticedOrTheOppositeBeingSoFidgetyOrRestlessThatYouHaveBeenMovingAroundALotMoreThanUsual",
+                            "label": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "5e46d764-b706-4291-9e8e-b64fdc9630d6",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Moving or speaking so slowly that other people could have noticed Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual"
+                        },
+                        {
+                            "id": "thoughtsThatYouWouldBeBetterOffDeadOrOfHurtingYourselfInSomeWay",
+                            "label": "Thoughts that you would be better off dead or of hurting yourself in some way",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "51d7f1ac-b927-4caa-b044-ac6496ed455f",
+                                "answers": [
+                                    {
+                                        "label": "Not at all",
+                                        "concept": "163733AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Several days",
+                                        "concept": "163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "More than half the days",
+                                        "concept": "163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "label": "Nearly every day",
+                                        "concept": "163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Thoughts that you would be better off dead or of hurting yourself in some way"
+                        },
+                        {
+                            "id": "phq9Score",
+                            "label": "PHQ-9 score",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "numeric",
+                                "concept": "MSF-1429",
+                                "calculate": {
+                                    "calculateExpression": "(no_interest === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : no_interest === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : no_interest === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (depressed === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : depressed === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 :  depressed==='163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (sleep === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : sleep === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : sleep === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (feelingTired === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : feelingTired === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : feelingTired === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) +(poorAppetite === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : poorAppetite === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : poorAppetite === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (troubled === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : troubled === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : troubled === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (feelingBad === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : feelingBad === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : feelingBad === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (speakingSlowly === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : speakingSlowly === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : speakingSlowly === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0) + (betterDead === '163734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 1 : betterDead === '163735AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 2 : betterDead === '163736AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? 3 : 0)"
+                                }
+                            },
+                            "validators": null,
+                            "questionInfo": "PHQ-9 score"
+                        },
+                        {
+                            "id": "depressionSeverityScale",
+                            "label": "Depression severity scale",
+                            "type": "obs",
+                            "required": false,
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "2066f043-2f21-4c19-8c04-77301d7404f9",
+                                "answers": [
+                                    {
+                                        "label": "No depression",
+                                        "concept": "noDepression"
+                                    },
+                                    {
+                                        "label": "Minimal symptoms",
+                                        "concept": "minimalSymptoms"
+                                    },
+                                    {
+                                        "label": "Minor to mild depression (or dysthymia)",
+                                        "concept": "minorToMildDepression"
+                                    },
+                                    {
+                                        "label": "Major depression",
+                                        "concept": "majorDepression"
+                                    },
+                                    {
+                                        "label": "Severe depression",
+                                        "concept": "severeDepression"
+                                    }
+                                ]
+                            },
+                            "validators": null,
+                            "questionInfo": "Depression severity scale"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

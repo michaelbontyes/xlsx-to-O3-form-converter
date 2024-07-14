@@ -4,16 +4,24 @@ A script to generate OpenMRS 3 forms from a metadata file in Excel.
 import json
 import os
 import re
+import time
 import pandas as pd
 
 # Load the metadata
 METADATA_FILE = 'metadata.xlsx'
 # Adjust header to start from row 2
 option_sets = pd.read_excel(METADATA_FILE, sheet_name='OptionSets', header=1)
-sheets = ['F01-MHPSS_Baseline', 'F02-MHPSS_Follow-up', 'F03-mhGAP_Baseline', 'F04-mhGAP_Follow-up', 'F05-MH_Closure']
+sheets = [
+    'F01-MHPSS Baseline', 
+    'F02-MHPSS Follow-up', 
+    'F03-mhGAP Baseline', 
+    'F04-mhGAP Follow-up', 
+    'F05-MH Closure',
+    'F06-PHQ-9'
+    ]
 
 # Define a global list to store all questions and answers
-all_questions_answers = []
+ALL_QUESTIONS_ANSWERS = []
 
 # Function to fetch options for a given option set
 def get_options(option_set_name):
@@ -29,17 +37,18 @@ def get_options(option_set_name):
     return option_sets[option_sets['OptionSet name'] == option_set_name].to_dict(orient='records')
 
 def find_question_concept_by_label(questions_answers, question_label):
+    " Find question concept by label. "
     for question in questions_answers:
         if question.get('question_id') == manage_id(question_label):
             return question.get('question_id')
     return manage_id(question_label)
 
 def find_answer_concept_by_label(questions_answers, question_id, answer_label):
+    " Find answer concept by label. "
     for question in questions_answers:
         if question.get('question_id') == manage_id(question_id):
             for answer in question.get('questionOptions').get('answers', []):
                 if answer.get('label') == answer_label:
-                    print(answer.get('concept'))
                     return answer.get('concept')
     return manage_id(answer_label)
 
@@ -89,18 +98,22 @@ def manage_label(original_label):
     return label
 
 # Manage IDs
-def manage_id(original_id, id_type="question", question_id="None", all_questions_answers=[]):
+def manage_id(original_id, id_type="question", question_id="None", all_questions_answers=None):
     """
-        Manage IDs.
+    Manage IDs.
 
     Args:
         original_id (str): The original ID.
         id_type (str, optional): The ID type. Defaults to "question".
         question_id (str, optional): The question ID. Defaults to "None".
+        all_questions_answers (list, optional): A list of all questions and their answers. 
+        Defaults to None.
 
     Returns:
         str: The cleaned ID.
     """
+    if all_questions_answers is None:
+        all_questions_answers = []
     cleaned_id = remove_prefixes(original_id)
     cleaned_id = re.sub(r'\s*\(.*?\)', '', cleaned_id)
     # Replace "/" with "Or"
@@ -183,7 +196,12 @@ def build_skip_logic_expression(expression: str, questions_answers) -> str:
     """
     # Regex pattern to match the required parts
     pattern = r"\[([^\]]+)\]\s*(<>|!==|==)\s*'([^']*)'"
-    uuid_pattern = r'[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|[a-fA-F0-9]{32}'
+    uuid_pattern = r'[a-fA-F0-9]{8}-' \
+                '[a-fA-F0-9]{4}-' \
+                '[a-fA-F0-9]{4}-' \
+                '[a-fA-F0-9]{4}-' \
+                '[a-fA-F0-9]{12}|' \
+                '[a-fA-F0-9]{32}'
     match = re.search(pattern, expression)
 
     if match:
@@ -192,7 +210,6 @@ def build_skip_logic_expression(expression: str, questions_answers) -> str:
             operator = '!=='
         elif operator != '!==':
             return 'Only conditional operator "different than" noted !== is supported'
-        
         # Check if original_question_label is a 36 character UUID
         if re.match(uuid_pattern, original_question_label):
             question_id = original_question_label
@@ -202,15 +219,14 @@ def build_skip_logic_expression(expression: str, questions_answers) -> str:
         if re.match(uuid_pattern, original_cond_answer):
             cond_answer = original_cond_answer
         else:
-            cond_answer = find_answer_concept_by_label(questions_answers, original_question_label, original_cond_answer)
-
-        # print("original expression:", expression, " and updated expression:", f"{question_id} {operator} '{cond_answer}'")
-
+            cond_answer = find_answer_concept_by_label(
+                questions_answers, original_question_label, original_cond_answer
+                )
         return f"{question_id} {operator} '{cond_answer}'"
 
     return "Invalid expression format"
 
-def generate_question(row, columns, translations_data):
+def generate_question(row, columns, question_translations):
     """
     Generate a question JSON from a row of the OptionSets sheet.
 
@@ -221,7 +237,6 @@ def generate_question(row, columns, translations_data):
     Returns:
         dict: A question JSON.
     """
-    global all_questions_answers  # Access the global list
 
     if row.isnull().all() or pd.isnull(row['Question']):
         return None  # Skip empty rows or rows with empty 'Question'
@@ -229,17 +244,16 @@ def generate_question(row, columns, translations_data):
     # Manage values and default values
     original_question_label = (row['Label if different'] if 'Label if different' in columns and
                             pd.notnull(row['Label if different']) else row['Question'])
-    
-    question_label_translation = (row['Translation - Question'] if 'Translation - Question' in columns and
-                            pd.notnull(row['Translation - Question']) else None)
+    question_label_translation = (
+        row['Translation - Question'] if 'Translation - Question' in columns and
+                            pd.notnull(row['Translation - Question']) else None
+                            )
 
     question_label = manage_label(original_question_label)
     question_id = manage_id(original_question_label)
 
     question_concept_id = (row['External ID'] if 'External ID' in columns and
                         pd.notnull(row['External ID']) else question_id)
-
-    question_type = "obs"
 
     question_datatype = (row['Datatype'].lower() if pd.notnull(row['Datatype']) else 'radio')
 
@@ -251,23 +265,20 @@ def generate_question(row, columns, translations_data):
 
     question_rendering = manage_rendering(question_datatype, validation_format)
 
-    question_validators = safe_json_loads(validation_format)
-
     # Build the question JSON
     question = {
         "id": question_id,
         "label": question_label,
-        "type": question_type,
+        "type": "obs",
         "required": question_required,
         "questionOptions": {
             "rendering": question_rendering,
             "concept": question_concept_id
         },
-        "validators": question_validators
+        "validators": safe_json_loads(validation_format)
     }
 
-    translations_data[question_label] = question_label_translation
-    print(question_label_translation)
+    question_translations[question_label] = question_label_translation
 
     if 'Default value' in columns and pd.notnull(row['Default value']):
         question['default'] = row['Default value']
@@ -279,7 +290,9 @@ def generate_question(row, columns, translations_data):
         question['questionOptions']['calculate'] = {"calculateExpression": row['Calculation']}
 
     if 'Skip logic' in columns and pd.notnull(row['Skip logic']):
-        question['hide'] = {"hideWhenExpression": build_skip_logic_expression(row['Skip logic'], all_questions_answers)}
+        question['hide'] = {"hideWhenExpression": build_skip_logic_expression(
+            row['Skip logic'], ALL_QUESTIONS_ANSWERS
+            )}
 
     if 'OptionSet name' in columns and pd.notnull(row['OptionSet name']):
         options = get_options(row['OptionSet name'])
@@ -289,13 +302,13 @@ def generate_question(row, columns, translations_data):
                 "concept": (opt['External ID'] if 'External ID' in columns and 
                                 pd.notnull(opt['External ID'])
                                 else manage_id(opt['Answers'], id_type="answer",
-                                                question_id=question_id, 
-                                                all_questions_answers=all_questions_answers)),
+                                                question_id=question_id,
+                                                all_questions_answers=ALL_QUESTIONS_ANSWERS)),
             }
             for opt in options
         ]
 
-        all_questions_answers.append({
+        ALL_QUESTIONS_ANSWERS.append({
             "question_id": question['id'],
             "question_label": question['label'],
             "questionOptions": {
@@ -304,13 +317,13 @@ def generate_question(row, columns, translations_data):
             }
         })
 
-    # Output all_questions_answers into a JSON file
-    with open('all_questions_answers.json', 'w', encoding='utf-8') as f:
-        json.dump(all_questions_answers, f, indent=4)
+    # Rename the variable inside the 'with' statement
+    with open('all_questions_answers.json', 'w', encoding='utf-8') as file:
+        json.dump(ALL_QUESTIONS_ANSWERS, file, indent=4)
 
     return question
 
-def generate_form(sheet_name, translations_data):
+def generate_form(sheet_name, form_translations):
     """
     Generate a form JSON from a sheet of the OptionSets sheet.
 
@@ -342,27 +355,35 @@ def generate_form(sheet_name, translations_data):
 
     pages = df['Page'].unique()
 
+    # Keep track of total questions and answers
+    count_total_questions = 0
+    count_total_answers = 0
+
     for page in pages:
         page_df = df[df['Page'] == page]
-        page_label = page
 
         form_data["pages"].append({
-            "label": f"{page_label} - page {len(form_data['pages']) + 1}", 
+            "label": f"{page}", 
             "sections": []
         })
 
-        sections = page_df['Section'].unique()
-
-        for section in sections:
+        for section in page_df['Section'].unique():
             section_df = page_df[page_df['Section'] == section]
-            section_label = (section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0])
+            section_label = (
+                section_df['Section'].iloc[0] if pd.notnull(section_df['Section'].iloc[0])
                             else '')
 
-            questions = [generate_question(row, columns, translations_data)
+            questions = [generate_question(row, columns, form_translations)
                         for _, row in section_df.iterrows()
                         if not row.isnull().all() and pd.notnull(row['Question'])]
 
             questions = [q for q in questions if q is not None]
+
+            count_total_questions += len(questions)
+            count_total_answers += sum(
+                len(q['questionOptions']['answers']) if 'answers' in q['questionOptions']
+                else 0 for q in questions
+                )
 
             form_data["pages"][-1]["sections"].append({
                 "label": section_label,
@@ -370,9 +391,9 @@ def generate_form(sheet_name, translations_data):
                 "questions": questions
             })
 
-    return form_data, concept_ids_set
+    return form_data, concept_ids_set, count_total_questions, count_total_answers
 
-def generate_translation_file(form_name, language, translations):
+def generate_translation_file(form_name, language, translations_list):
     """
     Generate a translation file JSON.
 
@@ -389,7 +410,7 @@ def generate_translation_file(form_name, language, translations):
         "form": form_name,
         "description": f"{language.capitalize()} Translations for '{form_name}'",
         "language": language,
-        "translations": translations
+        "translations": translations_list
     }
 
     return translation_file
@@ -398,12 +419,18 @@ def generate_translation_file(form_name, language, translations):
 OUTPUT_DIR = './forms'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# Load the data
 all_concept_ids = set()
 all_forms = []
+TOTAL_QUESTIONS = 0
+TOTAL_ANSWERS = 0
+
+# Start the timer
+start_time = time.time()
 
 for sheet in sheets:
     translations_data = {}
-    form, concept_ids = generate_form(sheet, translations_data)
+    form, concept_ids, total_questions, total_answers = generate_form(sheet, translations_data)
     translations = generate_translation_file(sheet, 'ar', translations_data)
     json_data = json.dumps(form, indent=4)
     translations_json_data = json.dumps(translations, indent=4)
@@ -411,17 +438,33 @@ for sheet in sheets:
         json.loads(json_data)  # Validate JSON format
         with open(os.path.join(OUTPUT_DIR, f"{sheet}.json"), 'w', encoding='utf-8') as f:
             f.write(json_data)
-        print(f"Form for sheet {sheet} generated successfully!")
+        print(f"Configuration file for form {sheet} generated successfully!")
         json.loads(translations_json_data)  # Validate JSON format
-        with open(os.path.join(OUTPUT_DIR, f"{sheet}_translation_ar.json"), 'w', encoding='utf-8') as f:
+        with open(
+            os.path.join(OUTPUT_DIR, f"{sheet}_translation_ar.json"), 'w', encoding='utf-8'
+            ) as f:
             f.write(translations_json_data.encode('utf-8').decode('unicode_escape'))
-        print(f"Form translations for sheet {sheet} generated successfully!")
+        print(f"Translation file for form {sheet} generated successfully!")
+        print()
     except json.JSONDecodeError as e:
         print(f"JSON format error in form generated from sheet {sheet}: {e}")
         print(f"JSON format error in translations form generated from sheet {sheet}: {e}")
-
     all_concept_ids.update(concept_ids)
     all_forms.append(form)
+    TOTAL_QUESTIONS += total_questions
+    TOTAL_ANSWERS += total_answers
 
-#check_missing_concepts(all_forms, all_concept_ids)
+# Count the number of forms generated
+FORMS_GENERATED = len(sheets)
+
+# End the timer
+end_time = time.time()
+
+# Calculate the total time taken
+total_time = end_time - start_time
+
+# Print the completion message with the number of forms generated
 print("Forms generation completed!")
+print(f"{FORMS_GENERATED} forms generated in {total_time:.2f} seconds")
+print(f"Total number of questions across all forms: {TOTAL_QUESTIONS}")
+print(f"Total number of answers across all forms: {TOTAL_ANSWERS}")
